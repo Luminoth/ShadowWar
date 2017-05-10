@@ -1,7 +1,7 @@
 {
-  "name": "io.cordova.myappacf3f6",
-  "author": "",
-  "homepage": "",
+  "name": "com.energonsoftware.ShadowWar",
+  "author": "Shane Lillie",
+  "homepage": "http://www.energonsoftware.org/",
   "private": true,
   "scripts": {
     "clean": "ionic-app-scripts clean",
