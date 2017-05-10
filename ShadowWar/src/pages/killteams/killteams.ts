@@ -3,15 +3,14 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
-    selector: 'page-page1',
-    templateUrl: 'page1.html'
+    selector: 'page-killteams',
+    templateUrl: 'killteams.html'
 })
-export class Page1 {
+export class PageKillTeams {
 
     constructor(public navCtrl: NavController) {
     }
 
-    onLink(url: string) {
-        window.open(url);
+    onAddKillTeam() {
     }
 }
