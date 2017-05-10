@@ -1,13 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
-import { StatusBar, Splashscreen } from 'ionic-native';
+import { Component, ViewChild } from "@angular/core";
+import { Nav, Platform } from "ionic-angular";
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
 
-import { PageKillTeams } from '../pages/killteams/killteams';
-
+import { PageKillTeams } from "../pages/killteams/killteams";
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: "app.html"
 })
+
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
@@ -15,22 +17,33 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform) {
+  constructor(public platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, private sqlite: SQLite) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Kill Teams', component: PageKillTeams },
+      { title: "Kill Teams", component: PageKillTeams }
     ];
 
   }
 
   initializeApp() {
     this.platform.ready().then(() => {
+      this.sqlite.create({
+          name: "data.db",
+          location: "default"
+        })
+        .then((db: SQLiteObject) => {
+            db.executeSql("CREATE TABLE killTeams(id INT)", {})
+              .then(() => console.log("Execute SQL"))
+              .catch(e => console.log(e));
+        })
+        .catch(e => console.log(e));
+
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      StatusBar.styleDefault();
-      Splashscreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
     });
   }
 
