@@ -20,6 +20,7 @@
         "@angular/platform-browser": "4.1.1",
         "@angular/platform-browser-dynamic": "4.1.1",
         "@angular/platform-server": "4.1.1",
+        "@ionic/cli-plugin-ionic-angular": "1.0.0",
         "@ionic/storage": "2.0.1",
         "ionic-angular": "3.2.0",
         "@ionic-native/core": "3.7.0",
