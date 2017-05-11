@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
+import { NavController, Platform } from "ionic-angular";
 
-import { NavController } from "ionic-angular";
+import { DatabaseProvider } from "../../providers/database/database";
 
 @Component({
     selector: "page-killteams",
@@ -8,8 +9,9 @@ import { NavController } from "ionic-angular";
 })
 
 export class PageKillTeams {
-
-    constructor(public navCtrl: NavController) {
+    constructor(private platform: Platform, private navCtrl: NavController, private databaseProvider: DatabaseProvider) {
+        this.platform.ready().then(() => {
+        });
     }
 
     onAddKillTeam() {
