@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Kill Team</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item>
+        <ion-label>Faction</ion-label>
+        <ion-select [(ngModel)]="faction" id="faction">
+            <ion-option *ngFor="let f of factions">
+                {{f.name}}
+            </ion-option>
+        </ion-select>
+    </ion-item>
+</ion-content>

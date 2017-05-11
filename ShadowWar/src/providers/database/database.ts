@@ -23,6 +23,7 @@ export class DatabaseProvider {
     }
 
     public initialize() {
+// TODO: have this mirror entity frameworks migration stuff (and rename it to migrate())
         return this.database.transaction((tx: any) => {
             tx.executeSql(`CREATE TABLE IF NOT EXISTS ${TableKillTeams} (id INTEGER PRIMARY KEY, name TEXT)`);
         });

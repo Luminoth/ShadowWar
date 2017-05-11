@@ -1,28 +1,36 @@
 import { NgModule, ErrorHandler } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { HttpModule } from "@angular/http";
 import { HockeyApp } from "ionic-hockeyapp";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { SQLite } from "@ionic-native/sqlite";
-import { BrowserModule } from "@angular/platform-browser";
 
 import { MyApp } from "./app.component";
+
 import { DatabaseProvider } from "../providers/database/database";
-import { PageKillTeams } from "../pages/killteams/killteams";
+import { FactionProvider } from "../providers/factions/faction";
+
+import { KillTeamsPage } from "../pages/killteams/killteams";
+import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
 
 @NgModule({
     declarations: [
         MyApp,
-        PageKillTeams
+        KillTeamsPage,
+        AddKillTeamPage
     ],
     imports: [
         IonicModule.forRoot(MyApp),
-        BrowserModule
+        BrowserModule,
+        HttpModule
     ],
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        PageKillTeams
+        KillTeamsPage,
+        AddKillTeamPage
     ],
     providers: [
         HockeyApp,
@@ -30,9 +38,9 @@ import { PageKillTeams } from "../pages/killteams/killteams";
         SplashScreen,
         SQLite,
         DatabaseProvider,
-        {provide: ErrorHandler, useClass: IonicErrorHandler}
+        FactionProvider,
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
     ]
 })
 
-export class AppModule {
-}
+export class AppModule {}

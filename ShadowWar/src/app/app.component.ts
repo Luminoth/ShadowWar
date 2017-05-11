@@ -5,16 +5,18 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
 import { DatabaseProvider } from "../providers/database/database";
-import { PageKillTeams } from "../pages/killteams/killteams";
+
+import { KillTeamsPage } from "../pages/killteams/killteams";
 
 @Component({
     templateUrl: "app.html"
 })
 
 export class MyApp {
+
     @ViewChild(Nav) private nav: Nav;
 
-    private rootPage: any = PageKillTeams;
+    private rootPage: any = KillTeamsPage;
 
     private pages: Array<{title: string, component: any}>;
 
@@ -30,7 +32,7 @@ export class MyApp {
 
         // used for an example of ngFor and navigation
         this.pages = [
-            { title: "Kill Teams", component: PageKillTeams }
+            { title: "Kill Teams", component: KillTeamsPage }
         ];
     }
 
