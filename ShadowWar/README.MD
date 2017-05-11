@@ -7,4 +7,4 @@ NPM Task Runner Visual Studio Extension
 
 # NPM modules
 
-npm install -g cordova ionic socket.io
+npm install -g typings cordova ionic socket.io

@@ -3,6 +3,7 @@ import { HockeyApp } from "ionic-hockeyapp";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
+import { SQLite } from "@ionic-native/sqlite";
 import { BrowserModule } from "@angular/platform-browser";
 
 import { MyApp } from "./app.component";
@@ -27,6 +28,7 @@ import { PageKillTeams } from "../pages/killteams/killteams";
         HockeyApp,
         StatusBar,
         SplashScreen,
+        SQLite,
         DatabaseProvider,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]

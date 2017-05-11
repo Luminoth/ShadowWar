@@ -8,11 +8,9 @@ const TableKillTeams: string = "killTeams";
 export class DatabaseProvider {
     public databaseName: string = DefaultDatabaseName;
 
-    private sqliteService: SQLite = null;
     private database: SQLiteObject = null;
 
-    constructor() {
-        this.sqliteService = new SQLite();
+    constructor(private sqliteService: SQLite) {
     }
 
     public open() {
