@@ -1,9 +1,12 @@
 import { Injectable } from "@angular/core";
 import { SQLite, SQLiteObject } from "@ionic-native/sqlite";
 
+const DefaultDatabaseName: string = "data.db";
+const TableKillTeams: string = "killTeams";
+
 @Injectable()
 export class DatabaseProvider {
-    public databaseName: string = "data.db";
+    public databaseName: string = DefaultDatabaseName;
 
     private sqliteService: SQLite = null;
     private database: SQLiteObject = null;
@@ -12,7 +15,7 @@ export class DatabaseProvider {
         this.sqliteService = new SQLite();
     }
 
-    open() {
+    public open() {
         return this.sqliteService.create({
             name: this.databaseName,
             location: "default"
@@ -21,9 +24,9 @@ export class DatabaseProvider {
         });
     }
 
-    createTables() {
-        return this.database.transaction((tx) => {
-            tx.executeSql("CREATE TABLE IF NOT EXISTS killTeams (id INTEGER PRIMARY KEY, name TEXT)");
+    public initialize() {
+        return this.database.transaction((tx: any) => {
+            tx.executeSql(`CREATE TABLE IF NOT EXISTS ${TableKillTeams} (id INTEGER PRIMARY KEY, name TEXT)`);
         });
     }
 }

@@ -9,11 +9,16 @@ import { DatabaseProvider } from "../../providers/database/database";
 })
 
 export class PageKillTeams {
-    constructor(private platform: Platform, private navCtrl: NavController, private databaseProvider: DatabaseProvider) {
+    constructor(
+        private platform: Platform,
+        private navCtrl: NavController,
+        private databaseProvider: DatabaseProvider) {
+
         this.platform.ready().then(() => {
+            // TODO: read teams from the database
         });
     }
 
-    onAddKillTeam() {
+    public onAddKillTeam() {
     }
 }

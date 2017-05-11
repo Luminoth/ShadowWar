@@ -1,5 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
-import { Nav, Platform } from "ionic-angular";
+import { HockeyApp } from "ionic-hockeyapp";
+import { Nav, Platform, AlertController, Alert } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
@@ -11,13 +12,20 @@ import { PageKillTeams } from "../pages/killteams/killteams";
 })
 
 export class MyApp {
-    @ViewChild(Nav) nav: Nav;
+    @ViewChild(Nav) private nav: Nav;
 
-    rootPage: any = PageKillTeams;
+    private rootPage: any = PageKillTeams;
 
-    pages: Array<{title: string, component: any}>;
+    private pages: Array<{title: string, component: any}>;
 
-    constructor(private platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, private databaseProvider: DatabaseProvider) {
+    constructor(
+        private platform: Platform,
+        private hockeyApp: HockeyApp,
+        private statusBar: StatusBar,
+        private splashScreen: SplashScreen,
+        private alertCtrl: AlertController,
+        private databaseProvider: DatabaseProvider) {
+
         this.initializeApp();
 
         // used for an example of ngFor and navigation
@@ -26,14 +34,23 @@ export class MyApp {
         ];
     }
 
-    initializeApp() {
+    private initializeApp() {
         this.platform.ready().then(() => {
+            // TODO: get app IDs
+            //this.hockeyApp.start("ANDROID_APP_ID", "IOS_APP_ID", true, false);
+
             this.databaseProvider.open()
                 .then(() => {
-                    this.databaseProvider.createTables()
+                    this.databaseProvider.initialize()
                     .catch(e => {
-                        // TODO: alert the user!
                         console.log(e);
+
+                        const alert: Alert = this.alertCtrl.create({
+                            title: "Database Error",
+                            message: "There was an error initializing the database!",
+                            buttons: [ "Ok" ]
+                        });
+                        alert.present();
                     });
 
                     // Okay, so the platform is ready and our plugins are available.
@@ -42,13 +59,19 @@ export class MyApp {
                     this.splashScreen.hide();
                 })
                 .catch(e => {
-                    // TODO: alert the user!
                     console.log(e);
+
+                    const alert: Alert = this.alertCtrl.create({
+                        title: "Database Error",
+                        message: "There was an error opening the database!",
+                        buttons: [ "Ok" ]
+                    });
+                    alert.present();
                 });
         });
     }
 
-    openPage(page) {
+    public openPage(page: any) {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);

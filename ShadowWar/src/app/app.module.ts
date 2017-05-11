@@ -1,4 +1,5 @@
 import { NgModule, ErrorHandler } from "@angular/core";
+import { HockeyApp } from "ionic-hockeyapp";
 import { IonicApp, IonicModule, IonicErrorHandler } from "ionic-angular";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -23,6 +24,7 @@ import { PageKillTeams } from "../pages/killteams/killteams";
         PageKillTeams
     ],
     providers: [
+        HockeyApp,
         StatusBar,
         SplashScreen,
         DatabaseProvider,
