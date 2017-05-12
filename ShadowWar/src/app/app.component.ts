@@ -44,8 +44,8 @@ export class MyApp {
             this.databaseProvider.open()
                 .then(() => {
                     this.databaseProvider.initialize()
-                    .catch(e => {
-                        console.log(e);
+                    .catch(err => {
+                        console.log(err);
 
                         const alert: Alert = this.alertCtrl.create({
                             title: "Database Error",
@@ -60,8 +60,8 @@ export class MyApp {
                     this.statusBar.styleDefault();
                     this.splashScreen.hide();
                 })
-                .catch(e => {
-                    console.log(e);
+                .catch(err => {
+                    console.log(err);
 
                     const alert: Alert = this.alertCtrl.create({
                         title: "Database Error",
