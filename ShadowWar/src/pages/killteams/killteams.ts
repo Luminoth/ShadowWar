@@ -16,7 +16,9 @@ export class KillTeamsPage {
         private platform: Platform,
         private navCtrl: NavController,
         private databaseProvider: DatabaseProvider) {
+    }
 
+    public ionViewWillEnter() {
         this.loadKillTeams();
     }
 

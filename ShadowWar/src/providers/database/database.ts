@@ -6,7 +6,16 @@ const TableKillTeams: string = "killTeams";
 
 @Injectable()
 export class DatabaseProvider {
-    public databaseName: string = DefaultDatabaseName;
+
+    private _databaseName: string = DefaultDatabaseName;
+
+    public get databaseName(): string {
+        return this._databaseName;
+    }
+
+    public set databaseName(value: string) {
+        this._databaseName = !!value ? value : DefaultDatabaseName;
+    }
 
     private database: SQLiteObject = null;
 

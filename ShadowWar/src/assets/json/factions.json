@@ -1,7 +1,19 @@
 ﻿{
     "factions": [
         {
-            "name": "Space Marine Scouts"
+            "name": "Space Marine Scouts",
+            "fighters":  [
+            ]
+        },
+        {
+            "name": "Astra Militarum Veterans",
+            "fighters":  [
+            ]
+        },
+        {
+            "name": "Ork Boyz",
+            "fighters":  [
+            ]
         }
     ]
 }

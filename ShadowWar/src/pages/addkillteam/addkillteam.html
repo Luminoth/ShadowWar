@@ -10,10 +10,8 @@
 <ion-content padding>
     <ion-item>
         <ion-label>Faction</ion-label>
-        <ion-select [(ngModel)]="faction" id="faction">
-            <ion-option *ngFor="let f of factions">
-                {{f.name}}
-            </ion-option>
+        <ion-select [(ngModel)]="selectedFaction" (ionChange)="onFactionSelected()" id="factionSelect">
+            <ion-option *ngFor="let faction of factions">{{faction.name}}</ion-option>
         </ion-select>
     </ion-item>
 </ion-content>
