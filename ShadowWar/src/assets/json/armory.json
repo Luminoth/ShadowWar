@@ -1,0 +1,57 @@
+﻿{
+    "armory": [
+        {
+            "faction": "Space Marine Scouts",
+            "equipmentLists": [
+                {
+                    "name": "Ammunition",
+                    "equipment": [
+                        {
+                            "name": "Hellfire Bolts",
+                            "cost": 20,
+                            "weaponRestrictions": [
+                                "Bolt Pistol",
+                                "Boltgun"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Grenades",
+                    "equipment": [
+                    ]
+                },
+                {
+                    "name": "Miscellaneous",
+                    "equipment": [
+                    ]
+                },
+                {
+                    "name": "Hand-to-Hand Weapons",
+                    "equipment": [
+                    ]
+                },
+                {
+                    "name": "Pistols",
+                    "equipment": [
+                    ]
+                },
+                {
+                    "name": "Basic Weapons",
+                    "equipment": [
+                    ]
+                },
+                {
+                    "name": "Heavy Weapons",
+                    "equipment": [
+                    ]
+                },
+                {
+                    "name": "Space Wolves Special Weapons",
+                    "equipment": [
+                    ]
+                }
+            ]
+        }
+    ]
+}

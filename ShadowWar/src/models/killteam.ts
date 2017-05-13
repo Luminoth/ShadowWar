@@ -1,14 +1,14 @@
-﻿import { Observable } from "rxjs/Observable";
+﻿import { Faction } from "./faction";
+import { Fighter, FighterType } from "./fighter";
+import { KillTeamFighter } from "./killteamfighter";
+
+const MinimumModels: number = 3;
+
+const MaxNewRecruitPercent: number = 0.5;
+
+const MaximumPoints: number = 1000;
 
 export class KillTeam {
-
-    private _changes: any;
-
-    public get changes(): any {
-        return this._changes;
-    }
-
-    private observer: any;
 
     private _id: number;
 
@@ -24,12 +24,45 @@ export class KillTeam {
 
     public set name(value: string) {
         this._name = value;
-        this.observer.next(true);
     }
 
-    constructor() {
-        this._changes = Observable.create(observer => {
-            this.observer = observer;
-        });
+    private _faction: Faction;
+
+    public get faction(): Faction {
+        return this._faction;
+    }
+
+    private _leader: KillTeamFighter;
+
+    public get leader(): KillTeamFighter {
+        return this._leader;
+    }
+
+    private _fighters: KillTeamFighter[] = [];
+
+    public get fighters(): KillTeamFighter[] {
+        return this._fighters;
+    }
+
+    public cost(): number {
+        return this._fighters.map(x => x.fighter.cost).reduce((x, y) => x + y);
+    }
+
+    public setFaction(value: Faction, leader: Fighter) {
+        this._faction = value;
+
+        if(FighterType.Leader === leader.type) {
+            this._leader = new KillTeamFighter(leader);
+        }
+
+        this._fighters = [];
+    }
+
+    public addFighter(fighter: Fighter) {
+        if(FighterType.Leader === fighter.type) {
+            return;
+        }
+
+        this._fighters.push(new KillTeamFighter(fighter));
     }
 }

@@ -8,10 +8,19 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-item>
+    <ion-item #factionItem>
         <ion-label>Faction</ion-label>
-        <ion-select [(ngModel)]="selectedFaction" (ionChange)="onFactionSelected()" id="factionSelect">
+        <ion-select [(ngModel)]="selectedFactionName" (ionChange)="onFactionSelected()" class="longSelect">
             <ion-option *ngFor="let faction of factions">{{faction.name}}</ion-option>
         </ion-select>
     </ion-item>
+    <ion-item *ngIf="killTeam.leader != null">
+        Leader: {{killTeam.leader.fighter.name}}
+    </ion-item>
+    <ion-list #fighterList>
+        <ion-item *ngFor="let fighter of killTeam.fighters">
+            Fighter: {{fighter.fighter.name}}
+        </ion-item>
+    </ion-list>
+    <div text-center><button ion-button (click)="onAddFighter()">Add Fighter</button></div>
 </ion-content>

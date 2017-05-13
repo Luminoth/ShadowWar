@@ -1,4 +1,6 @@
-﻿export enum FighterType {
+﻿import { FighterCharacteristics } from "./characteristics/fighter";
+
+export enum FighterType {
     Leader,
     Trooper,
     Specialist,
@@ -7,8 +9,8 @@
 
 export class Fighter {
 
-    public static fromJsonObjects(objects: any[]): Fighter[]
-    {
+    public static fromJsonObjects(objects: any[]): Fighter[] {
+
         const fighters: Fighter[] = [];
         for(let object of objects) {
             fighters.push(this.fromJsonObject(object));
@@ -16,12 +18,15 @@ export class Fighter {
         return fighters;
     }
 
-    public static fromJsonObject(object: any): Fighter
-    {
+    public static fromJsonObject(object: any): Fighter {
+
         const fighter: Fighter = new Fighter();
         fighter._name = object.name;
-        fighter._type = object.type;
+        fighter._type = FighterType[object.type as string];
         fighter._cost = object.cost;
+        fighter._characteristics = FighterCharacteristics.fromJsonObject(object.characteristics);
+        fighter._standardWarGear = object.standardWarGear;
+        fighter._availableWarGearLists = object.availableWarGearLists;
         return fighter;
     }
 
@@ -41,5 +46,23 @@ export class Fighter {
 
     public get cost(): number {
         return this._cost;
+    }
+
+    private _characteristics: FighterCharacteristics;
+
+    public get characteristics(): FighterCharacteristics {
+        return this._characteristics;
+    }
+
+    private _standardWarGear: string[];
+
+    public get standardWarGear(): string[] {
+        return this._standardWarGear;
+    }
+
+    private _availableWarGearLists: string[];
+
+    public get availableWarGearLists(): string[] {
+        return this._availableWarGearLists;
     }
 }

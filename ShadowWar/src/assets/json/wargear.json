@@ -1,0 +1,17 @@
+﻿{
+    "wargear":  [
+        {
+            "name": "Combat Blade",
+            "baseWarGear":  "Knife"
+        },
+        {
+            "name": "Knife",
+            "type": "HandToHandCombatWeapon",
+            "characteristics": {
+                "strMod": 2,
+                "dam": 1,
+                "saveMod": -2
+            }
+        }
+    ]
+}

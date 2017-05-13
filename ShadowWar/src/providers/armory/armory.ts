@@ -1,16 +1,16 @@
-import { Injectable } from "@angular/core";
+﻿import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
 import { AlertController, Alert } from "ionic-angular";
 import "rxjs/add/operator/map";
 
 import { Util } from "../../app/util";
 
-const FilePath: string = "json/factions.json";
+const FilePath: string = "json/wargear.json";
 
 @Injectable()
-export class FactionProvider {
+export class ArmoryProvider {
 
-    private factions: any = null;
+    private armory: any = null;
 
     constructor(
         private http: Http,
@@ -18,26 +18,26 @@ export class FactionProvider {
         private util: Util) {
     }
 
-    public getFactions() {
-        if(this.factions) {
-            return Promise.resolve(this.factions);
+    public getArmory() {
+        if(this.armory) {
+            return Promise.resolve(this.armory);
         }
 
         return new Promise((resolve, reject) => {
             const url: string = this.util.getAssetUrl(FilePath);
-            console.log(`Loading factions from ${url}...`);
+            console.log(`Loading armory from ${url}...`);
 
             this.http.get(url).map((res) => res.json())
                 .subscribe(data => {
-                    this.factions = data.factions;
-                    resolve(this.factions);
+                    this.armory = data.armory;
+                    resolve(this.armory);
                 },
                 err => {
                     console.log(err);
 
                     const alert: Alert = this.alertCtrl.create({
                         title: "Data Error",
-                        message: "There was an error loading faction data!",
+                        message: "There was an error loading armory data!",
                         buttons: [ "Ok" ]
                     });
                     alert.present();

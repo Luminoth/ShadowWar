@@ -10,7 +10,10 @@
 <ion-content padding>
     <ion-searchbar></ion-searchbar>
 
-    <ion-list>
+    <ion-list #killTeamList>
+        <ion-item *ngFor="let killTeam of killTeams">
+            {{killTeam.name}}
+        </ion-item>
     </ion-list>
 
     <ion-fab right bottom>

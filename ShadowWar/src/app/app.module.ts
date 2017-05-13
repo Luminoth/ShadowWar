@@ -13,6 +13,9 @@ import { Util } from "./util";
 
 import { DatabaseProvider } from "../providers/database/database";
 import { FactionProvider } from "../providers/factions/faction";
+import { FighterProvider } from "../providers/fighters/fighter";
+import { WarGearProvider } from "../providers/wargear/wargear";
+import { ArmoryProvider } from "../providers/armory/armory";
 
 import { KillTeamsPage } from "../pages/killteams/killteams";
 import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
@@ -43,7 +46,10 @@ import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
         Util,
         DatabaseProvider,
         FactionProvider,
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
+        FighterProvider,
+        WarGearProvider,
+        ArmoryProvider,
+        {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })
 

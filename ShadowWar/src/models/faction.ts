@@ -1,9 +1,7 @@
-﻿import { Fighter } from "./fighter";
+﻿export class Faction {
 
-export class Faction {
+    public static fromJsonObjects(objects: any[]): Faction[] {
 
-    public static fromJsonObjects(objects: any[]): Faction[]
-    {
         const factions: Faction[] = [];
         for(let object of objects) {
             factions.push(this.fromJsonObject(object));
@@ -11,11 +9,14 @@ export class Faction {
         return factions;
     }
 
-    public static fromJsonObject(object: any): Faction
-    {
+    public static fromJsonObject(object: any): Faction {
+
         const faction: Faction = new Faction();
         faction._name = object.name;
-        faction._fighters = Fighter.fromJsonObjects(object.fighters);
+        faction._specialRules = object.specialRules;
+        faction._fighters = object.fighters;
+        faction._maxModels = object.maxModels;
+        faction._maxSpecialists = object.maxSpecialists;
         return faction;
     }
 
@@ -25,9 +26,27 @@ export class Faction {
         return this._name;
     }
 
-    private _fighters: Fighter[];
+    private _specialRules: string[];
 
-    public get fighters(): Fighter[] {
+    public get special(): string[] {
+        return this._specialRules;
+    }
+
+    private _fighters: string[];
+
+    public get fighters(): string[] {
         return this._fighters;
+    }
+
+    private _maxModels: number;
+
+    public get maxModels(): number {
+        return this._maxModels;
+    }
+
+    private _maxSpecialists: number;
+
+    public get maxSpecialists(): number {
+        return this._maxSpecialists;
     }
 }

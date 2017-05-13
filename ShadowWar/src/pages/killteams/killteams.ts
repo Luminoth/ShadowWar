@@ -3,6 +3,8 @@ import { NavController, Platform } from "ionic-angular";
 
 import { DatabaseProvider } from "../../providers/database/database";
 
+import { KillTeam } from "../../models/killteam";
+
 import { AddKillTeamPage } from "../addkillteam/addkillteam";
 
 @Component({
@@ -11,6 +13,8 @@ import { AddKillTeamPage } from "../addkillteam/addkillteam";
 })
 
 export class KillTeamsPage {
+
+    private killTeams: KillTeam[];
 
     constructor(
         private platform: Platform,
