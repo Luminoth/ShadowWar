@@ -15,8 +15,8 @@
         equipment._name = object.name;
         equipment._cost = object.cost;
         equipment._weaponCostPercent = object.weaponCostPercent;
-        equipment._weaponRestrictions = object.weaponRestrictions;
-        equipment._fighterRestrictions = object.fighterRestrictions;
+        equipment._weaponRestrictions = object.weaponRestrictions || [];
+        equipment._fighterRestrictions = object.fighterRestrictions || [];
         return equipment;
     }
 
@@ -52,29 +52,9 @@ export class EquipmentList {
 
     private _name: string;
 
+    public get name(): string {
+        return this._name;
+    }
+
     private _equipment: Equipment[];
-}
-
-export class Armory {
-
-    public static fromJsonObjects(objects: any[]): Armory[] {
-
-        const equipment: Armory[] = [];
-        for(let object of objects) {
-            equipment.push(this.fromJsonObject(object));
-        }
-        return equipment;
-    }
-
-    public static fromJsonObject(object: any): Armory {
-
-        const equipment: Armory = new Armory();
-        equipment._factions = object.factions;
-        equipment._equipmentLists = EquipmentList.fromJsonObjects(object.equipmentLists);
-        return equipment;
-    }
-
-    private _factions: string[];
-
-    private _equipmentLists: EquipmentList[];
 }

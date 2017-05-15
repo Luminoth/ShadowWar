@@ -1,0 +1,21 @@
+﻿{
+    "equipmentList": [
+        {
+            "name": "Space Wolves Special Weapons",
+            "equipment": [
+                {
+                    "name": "Flamer",
+                    "cost": 40
+                },
+                {
+                    "name": "Plasma Gun",
+                    "cost": 80
+                },
+                {
+                    "name": "Meltagun",
+                    "cost": 95
+                }
+            ]
+        }
+    ]
+}

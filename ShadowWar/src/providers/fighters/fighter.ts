@@ -12,6 +12,7 @@ const FilePath: string = "json/fighters/";
 @Injectable()
 export class FighterProvider {
 
+    // { faction name => { fighter name => fighter } }
     private fighters: Map<string, Map<string, Fighter>> = new Map<string, Map<string, Fighter>>();
 
     constructor(
@@ -35,7 +36,7 @@ export class FighterProvider {
                     this.setFighters(faction, Fighter.fromJsonObjects(data.fighters));
 
                     if(faction.superFaction) {
-                        return this.resolveSuperFaction(faction)
+                        this.resolveSuperFaction(faction)
                             .then(() => {
                                 return resolve(this.fighters.get(faction.name));
                             });
@@ -65,7 +66,7 @@ export class FighterProvider {
             }
 
             return this.getFighters(faction)
-                .then(fighters => {
+                .then((fighters) => {
                     return resolve(fighters.get(name));
                 })
                 .catch((err) => {

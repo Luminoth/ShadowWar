@@ -12,6 +12,7 @@ const FileName: string = "factions.json";
 @Injectable()
 export class FactionProvider {
 
+    // { faction name => faction }
     private factions: Map<string, Faction> = new Map<string, Faction>();
 
     private factionsLoaded: boolean;

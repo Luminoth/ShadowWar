@@ -1,0 +1,154 @@
+﻿{
+    "equipmentList": [
+        {
+            "name": "Ammunition",
+            "equipment": [
+                {
+                    "name": "Hellfire Bolts",
+                    "cost": 20,
+                    "weaponRestrictions": [
+                        "Bolt Pistol",
+                        "Boltgun"
+                    ]
+                },
+                {
+                    "name": "Toxic Rounds",
+                    "cost": 20,
+                    "weaponRestrictions": [
+                        "Sniper Rifle"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Grenades",
+            "equipment": [
+                {
+                    "name": "Frag Grenades",
+                    "cost": 25
+                },
+                {
+                    "name": "Melta Bombs",
+                    "cost": 30,
+                    "fighterRestrictions": [
+                        "Scout Sergeant"
+                    ]
+                },
+                {
+                    "name": "Krak Grenades",
+                    "cost": 40
+                }
+            ]
+        },
+        {
+            "name": "Miscellaneous",
+            "equipment": [
+                {
+                    "name": "Camo Gear",
+                    "cost": 5
+                },
+                {
+                    "name": "Clip Harness",
+                    "cost": 10
+                },
+                {
+                    "name": "Photo-visor",
+                    "cost": 15
+                },
+                {
+                    "name": "Red-dot Laser Sight",
+                    "cost": 20
+                },
+                {
+                    "name": "Telescopic Sight",
+                    "cost": 20,
+                    "weaponRestrictions": [
+                        "~Shotgun"
+                    ]
+                },
+                {
+                    "name": "Weapon Reload",
+                    "weaponCostPercent": 0.5
+                }
+            ]
+        },
+        {
+            "name": "Hand-to-Hand Weapons",
+            "equipment": [
+                {
+                    "name": "Combat Blade",
+                    "cost": 5
+                },
+                {
+                    "name": "Assault Blade",
+                    "cost": 15
+                },
+                {
+                    "name": "Chainsword",
+                    "cost": 25
+                },
+                {
+                    "name": "Power Sword",
+                    "cost": 50,
+                    "fighterRestrictions": [
+                        "Scout Sergeant"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Pistols",
+            "equipment": [
+                {
+                    "name": "Bolt Pistol",
+                    "cost": 25
+                },
+                {
+                    "name": "Plasma Pistol",
+                    "cost": 50,
+                    "fighterRestrictions": [
+                        "Scout Sergeant"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Basic Weapons",
+            "equipment": [
+                {
+                    "name": "Shotgun",
+                    "cost": 20
+                },
+                {
+                    "name": "Boltgun,",
+                    "cost": 35
+                },
+                {
+                    "name": "Sniper Rifle",
+                    "cost": 40
+                }
+            ]
+        },
+        {
+            "name": "Heavy Weapons",
+            "equipment": [
+                {
+                    "name": "Heavy Bolter",
+                    "cost": 180
+                },
+                {
+                    "name": "Missile Launcher (Frag)",
+                    "cost": 175
+                },
+                {
+                    "name": "Missile Launcher (Krak)",
+                    "cost": 190
+                },
+                {
+                    "name": "Missile Launcher (Frag & Krak)",
+                    "cost": 225
+                }
+            ]
+        }
+    ]
+}
