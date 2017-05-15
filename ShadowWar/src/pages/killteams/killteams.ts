@@ -22,14 +22,16 @@ export class KillTeamsPage {
         private databaseProvider: DatabaseProvider) {
     }
 
-    public ionViewWillEnter() {
+    public ionViewWillEnter(): void {
         this.loadKillTeams();
     }
 
-    private loadKillTeams() {
+    private loadKillTeams(): Promise<void> {
+        return new Promise<void>(() => {
+        });
     }
 
-    public onAddKillTeam() {
-        this.navCtrl.push(AddKillTeamPage);
+    public onAddKillTeam(): Promise<void> {
+        return this.navCtrl.push(AddKillTeamPage);
     }
 }

@@ -48,7 +48,7 @@ export class KillTeam {
         return this._fighters.map(x => x.fighter.cost).reduce((x, y) => x + y);
     }
 
-    public setFaction(value: Faction, leader: Fighter) {
+    public setFaction(value: Faction, leader: Fighter): void {
         this._faction = value;
 
         if(FighterType.Leader === leader.type) {
@@ -58,7 +58,7 @@ export class KillTeam {
         this._fighters = [];
     }
 
-    public addFighter(fighter: Fighter) {
+    public addFighter(fighter: Fighter): void {
         if(FighterType.Leader === fighter.type) {
             return;
         }

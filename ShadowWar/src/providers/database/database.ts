@@ -17,12 +17,12 @@ export class DatabaseProvider {
         this._databaseName = !!value ? value : DefaultDatabaseName;
     }
 
-    private database: SQLiteObject = null;
+    private database: SQLiteObject;
 
     constructor(private sqliteService: SQLite) {
     }
 
-    public open() {
+    public open(): Promise<any> {
         return this.sqliteService.create({
             name: this.databaseName,
             location: "default"
@@ -31,7 +31,7 @@ export class DatabaseProvider {
         });
     }
 
-    public initialize() {
+    public initialize(): Promise<any> {
 // TODO: have this mirror entity frameworks migration stuff (and rename it to migrate())
         return this.database.transaction((tx: any) => {
             tx.executeSql(`CREATE TABLE IF NOT EXISTS ${TableKillTeams} (id INTEGER PRIMARY KEY, name TEXT)`);

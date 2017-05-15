@@ -5,33 +5,17 @@
             "specialRules": [
                 "And They Shall Know No Fear"
             ],
-            "fighters": [
-                "Scout Sergeant",
-                "Scout",
-                "Novitiate Scout",
-                "Scout Gunner"
-            ],
             "maxModels": 10,
             "maxSpecialists": 2
         },
         {
             "name": "Space Wolves",
-            "specialRules": [
-                "And They Shall Know No Fear"
-            ],
-            "fighters": [
-                "Scout Sergeant",
-                "Scout",
-                "Space Wolf Scout Gunner"
-            ],
-            "maxModels": 10,
-            "maxSpecialists": 2
+            "superFactionName":  "Space Marine Scouts"
         },
         {
             "name": "Astra Militarum Veterans",
             "specialRules": [
-            ],
-            "fighters": [
+                "Voice of Command"
             ],
             "maxModels": 10,
             "maxSpecialists": 3
@@ -39,10 +23,10 @@
         {
             "name": "Ork Boyz",
             "specialRules": [
+                "'Ere We Go!",
+                "Mob Rule"
             ],
-            "fighters": [
-            ],
-            "maxModels": 10,
+            "maxModels": 20,
             "maxSpecialists": 2
         }
     ]

@@ -14,7 +14,9 @@
         const equipment: Equipment = new Equipment();
         equipment._name = object.name;
         equipment._cost = object.cost;
+        equipment._weaponCostPercent = object.weaponCostPercent;
         equipment._weaponRestrictions = object.weaponRestrictions;
+        equipment._fighterRestrictions = object.fighterRestrictions;
         return equipment;
     }
 
@@ -22,7 +24,11 @@
 
     private _cost: number;
 
+    private _weaponCostPercent: number;
+
     private _weaponRestrictions: string[];
+
+    private _fighterRestrictions: string[];
 }
 
 export class EquipmentList {
@@ -63,12 +69,12 @@ export class Armory {
     public static fromJsonObject(object: any): Armory {
 
         const equipment: Armory = new Armory();
-        equipment._faction = object.faction;
+        equipment._factions = object.factions;
         equipment._equipmentLists = EquipmentList.fromJsonObjects(object.equipmentLists);
         return equipment;
     }
 
-    private _faction: string;
+    private _factions: string[];
 
     private _equipmentLists: EquipmentList[];
 }

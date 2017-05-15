@@ -1,0 +1,32 @@
+﻿{
+    "fighters": [
+        {
+            "name": "Scout Gunner",
+            "type": "Specialist",
+            "cost": 110,
+            "characteristics": {
+                "m": 5,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Scout Armour"
+            ],
+            "availableWarGearLists": [
+                "Pistols",
+                "Heavy Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous",
+                "Space Wolf Special Weapons"
+            ]
+        }
+    ]
+}

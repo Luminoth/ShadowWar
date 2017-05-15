@@ -13,8 +13,8 @@
 
         const faction: Faction = new Faction();
         faction._name = object.name;
-        faction._specialRules = object.specialRules;
-        faction._fighters = object.fighters;
+        faction._superFactionName = object.superFactionName;
+        faction._specialRules = object.specialRules || [];
         faction._maxModels = object.maxModels;
         faction._maxSpecialists = object.maxSpecialists;
         return faction;
@@ -26,16 +26,22 @@
         return this._name;
     }
 
-    private _specialRules: string[];
+    private _superFactionName: string;
 
-    public get special(): string[] {
-        return this._specialRules;
+    public get superFactionName(): string {
+        return this._superFactionName;
     }
 
-    private _fighters: string[];
+    private _superFaction: Faction;
 
-    public get fighters(): string[] {
-        return this._fighters;
+    public get superFaction(): Faction {
+        return this._superFaction;
+    }
+
+    private _specialRules: string[];
+
+    public get specialRules(): string[] {
+        return this._specialRules;
     }
 
     private _maxModels: number;
@@ -48,5 +54,18 @@
 
     public get maxSpecialists(): number {
         return this._maxSpecialists;
+    }
+
+    public getDataFileName(): string {
+        return this.name.replace(/\s/g, "").toLowerCase() + ".json";
+    }
+
+    public updateFromSuperFaction(superFaction: Faction): void {
+        this._superFaction = superFaction;
+
+        this._specialRules.concat(superFaction.specialRules);
+
+        this._maxModels = superFaction.maxModels;
+        this._maxSpecialists = superFaction.maxSpecialists;
     }
 }

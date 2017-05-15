@@ -16,10 +16,10 @@ import { KillTeam } from "../../models/killteam";
 
 export class AddKillTeamPage {
 
-    private factions: Faction[];
+    private factionNames: string[];
     private selectedFactionName: string;
 
-    private fighters: Fighter[];
+    private fighters: Map<string, Map<string, Fighter>>;
 
     private killTeam: KillTeam;
 
@@ -34,39 +34,40 @@ export class AddKillTeamPage {
         this.killTeam = new KillTeam();
     }
 
-    private ionViewWillEnter() {
-        this.loadFactions()
+    private ionViewWillEnter(): void {
+        this.loadFactionNames()
             .then(() => {
-                this.loadFighters()
-                    .then(() => {
-                        this.selectedFactionName = this.factions[0].name;
-                        this.onFactionSelected();
+                this.selectedFactionName = this.factionNames[0];
+                this.onFactionSelected();
+            });
+    }
+
+    private loadFactionNames(): Promise<any> {
+        return this.factionProvider.getFactionNames()
+            .then((factionNames) => {
+                this.factionNames = factionNames;
+            });
+    }
+
+    private onFactionSelected(): Promise<any> {
+        return this.factionProvider.getFaction(this.selectedFactionName)
+            .then((faction) => {
+                this.fighterProvider.getFighters(faction)
+                    .then((fighters) => {
+                        let leader: Fighter = null;
+                        for(let fighter of fighters) {
+                            if(FighterType.Leader === fighter[1].type) {
+                                leader = fighter[1];
+                                break;
+                            }
+                        }
+                        this.killTeam.setFaction(faction, leader);
                     });
             });
     }
 
-    private loadFactions() {
-        return this.factionProvider.getFactions()
-            .then(data => {
-                this.factions = Faction.fromJsonObjects(data);
-            });
-    }
-
-    private loadFighters() {
-        return this.fighterProvider.getFighters()
-            .then(data => {
-                this.fighters = Fighter.fromJsonObjects(data);
-            });
-    }
-
-    private onFactionSelected() {
-        const faction: Faction = this.factions.find(x => x.name === this.selectedFactionName);
-        const leader: Fighter = this.fighters.find(x => FighterType.Leader === x.type && faction.fighters.some(y => y === x.name));
-
-        this.killTeam.setFaction(faction, leader);
-    }
-
-    private onAddFighter() {
+    private onAddFighter(): void {
+/*
         const alert: Alert = this.alertCtrl.create({
             title: "Select a Fighter",
             buttons: [
@@ -91,5 +92,6 @@ export class AddKillTeamPage {
         }
 
         alert.present();
+*/
     }
 }

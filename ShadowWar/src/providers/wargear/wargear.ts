@@ -6,6 +6,7 @@ import "rxjs/add/operator/map";
 import { Util } from "../../app/util";
 
 const FilePath: string = "json/wargear.json";
+const FileName: string = "wargear.json";
 
 @Injectable()
 export class WarGearProvider {
@@ -18,13 +19,15 @@ export class WarGearProvider {
         private util: Util) {
     }
 
+// TODO: clean this up
+
     public getWarGear() {
         if(this.wargear) {
             return Promise.resolve(this.wargear);
         }
 
         return new Promise((resolve, reject) => {
-            const url: string = this.util.getAssetUrl(FilePath);
+            const url: string = this.util.getAssetFileUrl(FilePath, FileName);
             console.log(`Loading wargear from ${url}...`);
 
             this.http.get(url).map((res) => res.json())

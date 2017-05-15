@@ -11,7 +11,7 @@
     <ion-item #factionItem>
         <ion-label>Faction</ion-label>
         <ion-select [(ngModel)]="selectedFactionName" (ionChange)="onFactionSelected()" class="longSelect">
-            <ion-option *ngFor="let faction of factions">{{faction.name}}</ion-option>
+            <ion-option *ngFor="let factionName of factionNames">{{factionName}}</ion-option>
         </ion-select>
     </ion-item>
     <ion-item *ngIf="killTeam.leader != null">

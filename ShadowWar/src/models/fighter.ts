@@ -22,6 +22,7 @@ export class Fighter {
 
         const fighter: Fighter = new Fighter();
         fighter._name = object.name;
+        fighter._subFactionRestrictions = object.subFactionRestrictions || [];
         fighter._type = FighterType[object.type as string];
         fighter._cost = object.cost;
         fighter._characteristics = FighterCharacteristics.fromJsonObject(object.characteristics);
@@ -34,6 +35,12 @@ export class Fighter {
 
     public get name(): string {
         return this._name;
+    }
+
+    private _subFactionRestrictions: string[];
+
+    public get subFactionRestrictions(): string[] {
+        return this._subFactionRestrictions;
     }
 
     private _type: FighterType;

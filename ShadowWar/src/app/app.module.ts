@@ -9,7 +9,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { SQLite } from "@ionic-native/sqlite";
 
 import { MyApp } from "./app.component";
-import { Util } from "./util";
+import { RestrictionValidator, Util } from "./util";
 
 import { DatabaseProvider } from "../providers/database/database";
 import { FactionProvider } from "../providers/factions/faction";
@@ -43,6 +43,7 @@ import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
         StatusBar,
         SplashScreen,
         SQLite,
+        RestrictionValidator,
         Util,
         DatabaseProvider,
         FactionProvider,

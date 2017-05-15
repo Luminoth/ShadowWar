@@ -36,8 +36,8 @@ export class MyApp {
         ];
     }
 
-    private initializeApp() {
-        this.platform.ready().then(() => {
+    private initializeApp(): Promise<void> {
+        return this.platform.ready().then(() => {
             // TODO: get app IDs
             //this.hockeyApp.start("ANDROID_APP_ID", "IOS_APP_ID", true, false);
 
@@ -73,9 +73,9 @@ export class MyApp {
         });
     }
 
-    private openPage(page: any) {
+    private openPage(page: any): Promise<any> {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
-        this.nav.setRoot(page.component);
+        return this.nav.setRoot(page.component);
     }
 }

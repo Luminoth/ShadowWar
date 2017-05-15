@@ -1,43 +1,15 @@
 ﻿{
     "fighters": [
         {
-            "name": "Scout Sergeant",
+            "name": "Veteran Sergeant",
             "type": "Leader",
-            "cost": 200,
+            "cost": 120,
             "characteristics": {
-                "m": 5,
+                "m": 4,
                 "ws": 4,
                 "bs": 4,
-                "s": 4,
-                "t": 4,
-                "w": 1,
-                "i": 4,
-                "a": 2,
-                "ld": 9
-            },
-            "standardWarGear": [
-                "Combat Blade",
-                "Scout Armor"
-            ],
-            "availableWarGearLists": [
-                "Hand-to-Hand Weapons",
-                "Pistols",
-                "Basic Weapons",
-                "Ammunition",
-                "Grenades",
-                "Miscellaneous Equipment"
-            ]
-        },
-        {
-            "name": "Scout",
-            "type": "Trooper",
-            "cost": 100,
-            "characteristics": {
-                "m": 5,
-                "ws": 4,
-                "bs": 4,
-                "s": 4,
-                "t": 4,
+                "s": 3,
+                "t": 3,
                 "w": 1,
                 "i": 4,
                 "a": 1,
@@ -45,7 +17,7 @@
             },
             "standardWarGear": [
                 "Combat Blade",
-                "Scout Armor"
+                "Flak Armour"
             ],
             "availableWarGearLists": [
                 "Hand-to-Hand Weapons",
@@ -57,23 +29,51 @@
             ]
         },
         {
-            "name": "Novitiate Scout",
-            "type": "NewRecruit",
-            "cost": 75,
+            "name": "Veteran Guardsman",
+            "type": "Trooper",
+            "cost": 60,
             "characteristics": {
-                "m": 5,
+                "m": 4,
+                "ws": 3,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Flak Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Guardsman",
+            "type": "NewRecruit",
+            "cost": 50,
+            "characteristics": {
+                "m": 4,
                 "ws": 3,
                 "bs": 3,
-                "s": 4,
-                "t": 4,
+                "s": 3,
+                "t": 3,
                 "w": 1,
-                "i": 4,
+                "i": 3,
                 "a": 1,
-                "ld": 8
+                "ld": 7
             },
             "standardWarGear": [
                 "Combat Blade",
-                "Scout Armor"
+                "Flak Armour"
             ],
             "availableWarGearLists": [
                 "Hand-to-Hand Weapons",
@@ -85,58 +85,31 @@
             ]
         },
         {
-            "name": "Scout Gunner",
+            "name": "Special Weapons Operative",
             "type": "Specialist",
-            "cost": 110,
+            "cost": 70,
             "characteristics": {
-                "m": 5,
-                "ws": 4,
+                "m": 4,
+                "ws": 3,
                 "bs": 4,
-                "s": 4,
-                "t": 4,
+                "s": 3,
+                "t": 3,
                 "w": 1,
-                "i": 4,
+                "i": 3,
                 "a": 1,
-                "ld": 8
+                "ld": 7
             },
             "standardWarGear": [
                 "Combat Blade",
-                "Scout Armor"
+                "Flak Armour"
             ],
             "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
                 "Pistols",
-                "Heavy Weapons",
+                "Special Weapons",
                 "Ammunition",
                 "Grenades",
                 "Miscellaneous"
-            ]
-        },
-        {
-            "name": "Space Wolf Scout Gunner",
-            "type": "Specialist",
-            "cost": 110,
-            "characteristics": {
-                "m": 5,
-                "ws": 4,
-                "bs": 4,
-                "s": 4,
-                "t": 4,
-                "w": 1,
-                "i": 4,
-                "a": 1,
-                "ld": 8
-            },
-            "standardWarGear": [
-                "Combat Blade",
-                "Scout Armor"
-            ],
-            "availableWarGearLists": [
-                "Pistols",
-                "Heavy Weapons",
-                "Ammunition",
-                "Grenades",
-                "Miscellaneous",
-                "Space Wolf Special Weapons"
             ]
         }
     ]

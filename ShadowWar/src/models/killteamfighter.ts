@@ -17,16 +17,6 @@ export class KillTeamFighter {
         this._name = value;
     }
 
-    private _isDead: boolean = false;
-
-    public get isDead(): boolean {
-        return this._isDead;
-    }
-
-    public set isDead(value: boolean) {
-        this._isDead = value;
-    }
-
     private _wargear: KillTeamFighterWarGear[] = [];
 
     constructor(private _fighter: Fighter) {
