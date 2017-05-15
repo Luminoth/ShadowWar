@@ -57,6 +57,23 @@ export class FighterProvider {
         });
     }
 
+    public getFighter(faction: Faction, name: string): Promise<Fighter> {
+        return new Promise<Fighter>((resolve, reject) => {
+            if(this.fighters.has(faction.name)) {
+                const fighters: Map<string, Fighter> = this.fighters.get(faction.name);
+                return resolve(fighters.get(name));
+            }
+
+            return this.getFighters(faction)
+                .then(fighters => {
+                    return resolve(fighters.get(name));
+                })
+                .catch((err) => {
+                    return reject(err);
+                });
+        });
+    }
+
     private setFighters(faction: Faction, fighters: Fighter[]): void {
         const fighterMap: Map<string, Fighter> = new Map<string, Fighter>();
         for(let fighter of fighters) {

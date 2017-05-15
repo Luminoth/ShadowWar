@@ -2,11 +2,11 @@
 import { Fighter, FighterType } from "./fighter";
 import { KillTeamFighter } from "./killteamfighter";
 
-const MinimumModels: number = 3;
+export const MinimumModels: number = 3;
 
-const MaxNewRecruitPercent: number = 0.5;
+export const MaxNewRecruitPercent: number = 0.5;
 
-const MaximumPoints: number = 1000;
+export const MaximumPoints: number = 1000;
 
 export class KillTeam {
 

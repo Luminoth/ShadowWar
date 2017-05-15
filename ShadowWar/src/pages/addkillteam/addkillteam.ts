@@ -19,7 +19,8 @@ export class AddKillTeamPage {
     private factionNames: string[];
     private selectedFactionName: string;
 
-    private fighters: Map<string, Map<string, Fighter>>;
+    private fighters: Map<string, Fighter>;
+    private fighterList: Fighter[];
 
     private killTeam: KillTeam;
 
@@ -52,29 +53,48 @@ export class AddKillTeamPage {
     private onFactionSelected(): Promise<any> {
         return this.factionProvider.getFaction(this.selectedFactionName)
             .then((faction) => {
-                this.fighterProvider.getFighters(faction)
-                    .then((fighters) => {
-                        let leader: Fighter = null;
-                        for(let fighter of fighters) {
-                            if(FighterType.Leader === fighter[1].type) {
-                                leader = fighter[1];
-                                break;
-                            }
-                        }
-                        this.killTeam.setFaction(faction, leader);
+                this.loadFighters(faction)
+                    .then(() => {
+                        this.setFaction(faction);
                     });
             });
     }
 
+    private loadFighters(faction: Faction): Promise<any> {
+        return this.fighterProvider.getFighters(faction)
+            .then((fighters) => {
+                this.fighters = fighters;
+
+                this.fighterList = [];
+                for(let fighter of this.fighters) {
+                    if(FighterType.Leader === fighter[1].type) {
+                        continue;
+                    }
+                    this.fighterList.push(fighter[1]);
+                }
+                this.fighterList.sort((x, y) => x.type - y.type);
+            });
+    }
+
+    private setFaction(faction: Faction): void {
+        let leader: Fighter = null;
+        for(let fighter of this.fighters) {
+            if(FighterType.Leader === fighter[1].type) {
+                leader = fighter[1];
+                break;
+            }
+        }
+        this.killTeam.setFaction(faction, leader);
+    }
+
     private onAddFighter(): void {
-/*
         const alert: Alert = this.alertCtrl.create({
             title: "Select a Fighter",
             buttons: [
                 {
                     text: "Ok",
                     handler: data => {
-                        const fighter: Fighter = this.fighters.find(x => x.name === data);
+                        const fighter: Fighter = this.fighters.get(data);
                         this.killTeam.addFighter(fighter);
                     }
                 },
@@ -85,13 +105,17 @@ export class AddKillTeamPage {
             ]
         });
 
-        const fighters: Fighter[] = this.fighters.filter(x => FighterType.Leader !== x.type && this.killTeam.faction.fighters.some(y => y === x.name));
-        for(let i: number=0; i<fighters.length; ++i) {
-            const fighter: Fighter = fighters[i];
-            alert.addInput({type: "radio", name: "fighter", value: fighter.name, label: fighter.name, checked: 0 ===i});
+        for(let i: number=0; i<this.fighterList.length; ++i) {
+            const fighter: Fighter = this.fighterList[i];
+            alert.addInput({
+                type: "radio",
+                name: "fighter",
+                value: fighter.name,
+                label: fighter.name,
+                checked: 0 === i
+            });
         }
 
         alert.present();
-*/
     }
 }

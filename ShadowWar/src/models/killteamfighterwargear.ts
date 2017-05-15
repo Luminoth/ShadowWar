@@ -1,6 +1,6 @@
 ﻿import { WarGear } from "./wargear";
 
-const MaxHeavyWeapons: number = 1;
+export const MaxHeavyWeapons: number = 1;
 
 export class KillTeamFighterWarGear {
 

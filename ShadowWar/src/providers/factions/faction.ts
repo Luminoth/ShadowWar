@@ -31,6 +31,9 @@ export class FactionProvider {
             return this.getFactions()
                 .then(() => {
                     return resolve(Array.from(this.factions.keys()));
+                })
+                .catch((err) => {
+                    return reject(err);
                 });
         });
     }
@@ -44,6 +47,9 @@ export class FactionProvider {
             return this.getFactions()
                 .then(() => {
                     return resolve(this.factions.get(faction));
+                })
+                .catch((err) => {
+                    return reject(err);
                 });
         });
     }
