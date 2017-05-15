@@ -118,4 +118,14 @@ export class AddKillTeamPage {
 
         alert.present();
     }
+
+    private onSave(): Promise<any> {
+        // TODO: save
+
+        return this.navCtrl.pop();
+    }
+
+    private onReset(): void {
+        // TODO: reset
+    }
 }
