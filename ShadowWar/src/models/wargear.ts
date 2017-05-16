@@ -43,6 +43,10 @@ export class WarGear {
 
     private _baseWarGear: string;
 
+    public get baseWarGear(): string {
+        return this._baseWarGear;
+    }
+
     private _type: WarGearType;
 
     public get type(): WarGearType {
@@ -56,4 +60,10 @@ export class WarGear {
     }
 
     private _specialRules: string[];
+
+    public updateFromBaseWarGear(baseWarGear: WarGear): void {
+        this._type = baseWarGear._type;
+        this._characteristics = baseWarGear._characteristics;
+        this._specialRules = baseWarGear._specialRules;
+    }
 }
