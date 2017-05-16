@@ -14,16 +14,36 @@
             <ion-option *ngFor="let factionName of factionNames">{{factionName}}</ion-option>
         </ion-select>
     </ion-item>
-    <ion-item *ngIf="killTeam.leader != null">
-        Leader: {{killTeam.leader.fighter.name}}
-    </ion-item>
-    <ion-list #fighterList>
-        <ion-item *ngFor="let fighter of killTeam.fighters">
-            Fighter: {{fighter.fighter.name}}
-        </ion-item>
-    </ion-list>
-    <div text-center><button ion-button (click)="onAddFighter()">Add Fighter</button></div>
-    <button ion-fab (click)="onSave()">
-        <ion-icon name="add"></ion-icon>
-    </button>
+    <ion-card #leaderCard>
+        <ion-card-header>Kill Team Leader</ion-card-header>
+        <ion-card-content>
+            <ion-item>
+                <ion-select [(ngModel)]="selectedLeaderName" class="longSelect">
+                    <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-card-content>
+    </ion-card>
+    <ion-card #fighterCard *ngFor="let fighter of killTeam.fighters">
+        <ion-card-header>{{fighter.fighter.name}}</ion-card-header>
+        <ion-card-content>
+        </ion-card-content>
+    </ion-card>
+    <div text-center>
+        <button ion-button (click)="onAddFighter()">Add Fighter</button>
+    </div>
+    <ion-grid>
+        <ion-row justify-content-center>
+            <ion-col>
+                <button ion-fab (click)="onSave()">
+                    <ion-icon name="add"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button ion-fab (click)="onReset()">
+                    <ion-icon name="undo"></ion-icon>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

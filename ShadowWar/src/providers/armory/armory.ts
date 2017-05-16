@@ -52,7 +52,7 @@ export class ArmoryProvider {
                     });
                     alert.present();
 
-                    reject(err);
+                    return reject(err);
                 });
         });
     }

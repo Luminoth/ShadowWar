@@ -19,6 +19,9 @@ export class AddKillTeamPage {
     private factionNames: string[];
     private selectedFactionName: string;
 
+    private leaderNames: string[];
+    private selectedLeaderName: string;
+
     private fighters: Map<string, Fighter>;
     private fighterList: Fighter[];
 
@@ -64,27 +67,24 @@ export class AddKillTeamPage {
         return this.fighterProvider.getFighters(faction)
             .then((fighters) => {
                 this.fighters = fighters;
+                this.leaderNames = [];
 
                 this.fighterList = [];
                 for(let fighter of this.fighters) {
                     if(FighterType.Leader === fighter[1].type) {
+                        this.leaderNames.push(fighter[0]);
                         continue;
                     }
                     this.fighterList.push(fighter[1]);
                 }
+
+                this.selectedLeaderName = this.leaderNames[0];
                 this.fighterList.sort((x, y) => x.type - y.type);
             });
     }
 
     private setFaction(faction: Faction): void {
-        let leader: Fighter = null;
-        for(let fighter of this.fighters) {
-            if(FighterType.Leader === fighter[1].type) {
-                leader = fighter[1];
-                break;
-            }
-        }
-        this.killTeam.setFaction(faction, leader);
+        this.killTeam.setFaction(faction, this.fighters.get(this.selectedLeaderName));
     }
 
     private onAddFighter(): void {
