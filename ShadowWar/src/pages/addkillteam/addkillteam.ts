@@ -119,6 +119,10 @@ export class AddKillTeamPage {
         alert.present();
     }
 
+    private onReorderFighters(indexes: any): void {
+        this.killTeam.reorderFighters(indexes);
+    }
+
     private onSave(): Promise<any> {
         // TODO: save
 

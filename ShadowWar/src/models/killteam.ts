@@ -1,4 +1,6 @@
-﻿import { Faction } from "./faction";
+﻿import { reorderArray } from "ionic-angular";
+
+import { Faction } from "./faction";
 import { Fighter, FighterType } from "./fighter";
 import { KillTeamFighter } from "./killteamfighter";
 
@@ -38,6 +40,7 @@ export class KillTeam {
         return this._leader;
     }
 
+    // TODO: this is *ordered* (important for building SQL)
     private _fighters: KillTeamFighter[] = [];
 
     public get fighters(): KillTeamFighter[] {
@@ -64,5 +67,9 @@ export class KillTeam {
         }
 
         this._fighters.push(new KillTeamFighter(fighter));
+    }
+
+    public reorderFighters(indexes: any): void {
+        this._fighters = reorderArray(this._fighters, indexes);
     }
 }
