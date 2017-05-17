@@ -49,6 +49,10 @@ export class Fighter {
         return this._type;
     }
 
+    public getTypeString(): string {
+        return FighterType[this._type];
+    }
+
     private _cost: number;
 
     public get cost(): number {
