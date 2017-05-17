@@ -17,12 +17,17 @@ import { FighterProvider } from "../providers/fighters/fighter";
 import { WarGearProvider } from "../providers/wargear/wargear";
 import { ArmoryProvider } from "../providers/armory/armory";
 
+import { FighterCardComponent } from "../components/fighter-card/fighter-card";
+import { LeaderCardComponent } from "../components/leader-card/leader-card";
+
 import { KillTeamsPage } from "../pages/killteams/killteams";
 import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
 
 @NgModule({
     declarations: [
         MyApp,
+        FighterCardComponent,
+        LeaderCardComponent,
         KillTeamsPage,
         AddKillTeamPage
     ],

@@ -1,0 +1,28 @@
+<ion-card>
+    <ion-card-header>
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-select item-left [(ngModel)]="selectedLeaderName" class="leaderName">
+                            <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
+                        </ion-select>
+                    </ion-item>
+                </ion-col>
+                <ion-col>
+                    <button ion-button icon-only item-right clear color="secondary">
+                        <ion-icon name="trash"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-2>
+                    Kill Team Leader
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card-header>
+    <ion-card-content>
+        Content
+    </ion-card-content>
+</ion-card>

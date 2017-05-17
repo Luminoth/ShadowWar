@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+    <!-- TODO: make this a component -->
     <ion-item #factionItem>
         <ion-label>Faction</ion-label>
         <ion-select [(ngModel)]="selectedFactionName" (ionChange)="onFactionSelected()" class="longSelect">
@@ -16,39 +17,11 @@
     </ion-item>
     <ion-list>
         <ion-item #leaderItem>
-            <ion-card>
-                <ion-card-header>
-                    <ion-item>
-                        <ion-select item-left [(ngModel)]="selectedLeaderName" class="fullSelect">
-                            <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
-                        </ion-select>
-                        <button ion-button icon-only item-right clear color="secondary">
-                            <ion-icon name="trash"></ion-icon>
-                        </button>
-                    </ion-item>
-                    <p>Kill Team Leader</p>
-                </ion-card-header>
-                <ion-card-content>
-                    Content
-                </ion-card-content>
-            </ion-card>
+            <leader-card [leaderNames]="leaderNames" [selectedLeaderName]="selectedLeaderName"></leader-card>
         </ion-item>
         <ion-item-group reorder="true" (ionItemReorder)="onReorderFighters($event)">
-            <ion-item no-lines #fighterItem *ngFor="let fighter of killTeam.fighters">
-                <ion-card>
-                    <ion-card-header>
-                        <ion-item>
-                            <h2 item-left>{{fighter.fighter.name}}</h2>
-                            <button ion-button icon-only item-right clear color="secondary">
-                                <ion-icon name="trash"></ion-icon>
-                            </button>
-                        </ion-item>
-                        <p>{{fighter.fighter.getTypeString()}}</p>
-                    </ion-card-header>
-                    <ion-card-content>
-                        Content
-                    </ion-card-content>
-                </ion-card>
+            <ion-item #fighterItem no-lines *ngFor="let fighter of killTeam.fighters">
+                <fighter-card [fighter]="fighter"></fighter-card>
             </ion-item>
         </ion-item-group>
     </ion-list>
