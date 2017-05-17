@@ -15,6 +15,16 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+ion-card-header {
+    color: color($colors, light);
+    background-color: color($colors, dark);
+}
+
 ion-select.longSelect {
     max-width: 75%;
+}
+
+ion-select.fullSelect {
+    max-width: 100%;
+    width: 100%;
 }

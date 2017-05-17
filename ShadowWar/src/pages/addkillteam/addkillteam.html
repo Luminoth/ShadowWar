@@ -14,36 +14,53 @@
             <ion-option *ngFor="let factionName of factionNames">{{factionName}}</ion-option>
         </ion-select>
     </ion-item>
-    <ion-card #leaderCard>
-        <ion-card-header>Kill Team Leader</ion-card-header>
-        <ion-card-content>
-            <ion-item>
-                <ion-select [(ngModel)]="selectedLeaderName" class="longSelect">
-                    <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
-                </ion-select>
+    <ion-list>
+        <ion-item #leaderItem>
+            <ion-card>
+                <ion-card-header>
+                    <ion-item>
+                        <ion-select item-left [(ngModel)]="selectedLeaderName" class="fullSelect">
+                            <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
+                        </ion-select>
+                        <button ion-button icon-only item-right clear color="secondary">
+                            <ion-icon name="trash"></ion-icon>
+                        </button>
+                    </ion-item>
+                    <p>Kill Team Leader</p>
+                </ion-card-header>
+                <ion-card-content>
+                    Content
+                </ion-card-content>
+            </ion-card>
+        </ion-item>
+        <ion-item-group reorder="true" (ionItemReorder)="onReorderFighters($event)">
+            <ion-item no-lines #fighterItem *ngFor="let fighter of killTeam.fighters">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-item>
+                            <h2 item-left>{{fighter.fighter.name}}</h2>
+                            <button ion-button icon-only item-right clear color="secondary">
+                                <ion-icon name="trash"></ion-icon>
+                            </button>
+                        </ion-item>
+                        <p>{{fighter.fighter.getTypeString()}}</p>
+                    </ion-card-header>
+                    <ion-card-content>
+                        Content
+                    </ion-card-content>
+                </ion-card>
             </ion-item>
-        </ion-card-content>
-    </ion-card>
-    <ion-card #fighterCard *ngFor="let fighter of killTeam.fighters">
-        <ion-card-header>{{fighter.fighter.name}}</ion-card-header>
-        <ion-card-content>
-        </ion-card-content>
-    </ion-card>
+        </ion-item-group>
+    </ion-list>
     <div text-center>
         <button ion-button (click)="onAddFighter()">Add Fighter</button>
     </div>
-    <ion-grid>
-        <ion-row justify-content-center>
-            <ion-col>
-                <button ion-fab (click)="onSave()">
-                    <ion-icon name="add"></ion-icon>
-                </button>
-            </ion-col>
-            <ion-col>
-                <button ion-fab (click)="onReset()">
-                    <ion-icon name="undo"></ion-icon>
-                </button>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+    <div text-center>
+        <button ion-fab (click)="onSave()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+        <button ion-fab (click)="onReset()">
+            <ion-icon name="undo"></ion-icon>
+        </button>
+    </div>
 </ion-content>
