@@ -19,6 +19,7 @@ import { ArmoryProvider } from "../providers/armory/armory";
 
 import { FighterCardComponent } from "../components/fighter-card/fighter-card";
 import { LeaderCardComponent } from "../components/leader-card/leader-card";
+import { FighterCharacteristicsComponent } from '../components/fighter-characteristics/fighter-characteristics';
 
 import { KillTeamsPage } from "../pages/killteams/killteams";
 import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
@@ -28,6 +29,7 @@ import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
         MyApp,
         FighterCardComponent,
         LeaderCardComponent,
+        FighterCharacteristicsComponent,
         KillTeamsPage,
         AddKillTeamPage
     ],

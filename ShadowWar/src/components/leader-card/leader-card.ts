@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 
-import { KillTeamFighter } from "../../models/killteamfighter";
+import { KillTeam } from "../../models/killteam";
 
 @Component({
     selector: "leader-card",
@@ -11,5 +11,6 @@ export class LeaderCardComponent {
 
     @Input() private leaderNames: string[];
     @Input() private selectedLeaderName: string;
+    @Input() private killTeam: KillTeam;
 
 }
