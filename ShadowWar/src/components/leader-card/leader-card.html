@@ -1,22 +1,19 @@
-<ion-grid class="header">
-    <ion-row>
-        <ion-col>
-<!--
+<div class="header" *ngIf="undefined != killTeam.leader">
+    <div class="row">
+        <div text-left class="col">
+            <!--
             <ion-item>
                 <ion-select [(ngModel)]="selectedLeaderName" class="leaderName">
                     <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
                 </ion-select>
             </ion-item>
--->
-            <div text-left *ngIf="undefined != killTeam.leader"><h2>{{killTeam.leader.fighter.name}}</h2></div>
-        </ion-col>
-        <ion-col><div text-right *ngIf="undefined != killTeam.leader">{{killTeam.leader.fighter.getTypeString()}}</div></ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col><div text-left *ngIf="undefined != killTeam.leader">{{killTeam.leader.fighter.cost}} points</div></ion-col>
-        <ion-col>
-            <!-- no buttons -->
-        </ion-col>
-    </ion-row>
-</ion-grid>
+            -->
+            <h2>{{killTeam.leader.fighter.name}}</h2>
+        </div>
+        <div text-right class="col">{{killTeam.leader.fighter.getTypeString()}}</div>
+    </div>
+    <div class="row">
+        <div text-left class="col">{{killTeam.leader.fighter.cost}} points</div>
+    </div>
+</div>
 <fighter-characteristics *ngIf="undefined != killTeam.leader" [fighter]="killTeam.leader"></fighter-characteristics>

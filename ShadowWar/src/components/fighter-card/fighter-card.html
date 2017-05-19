@@ -1,16 +1,13 @@
-<ion-grid class="header">
-    <ion-row>
-        <ion-col><div text-left><h2>{{fighter.fighter.name}}</h2></div></ion-col>
-        <ion-col><div text-right>{{fighter.fighter.getTypeString()}}</div></ion-col>
-    </ion-row>
-    <ion-row>
-        <ion-col><div text-left>{{fighter.fighter.cost}} points</div></ion-col>
-        <ion-col>
-            <ion-row justify-content-end>
-                <ion-col no-padding><button ion-button icon-only clear color="secondary"><ion-icon name="copy"></ion-icon></button></ion-col>
-                <ion-col no-padding><button ion-button icon-only clear color="secondary"><ion-icon name="trash"></ion-icon></button></ion-col>
-            </ion-row>
-        </ion-col>
-    </ion-row>
-</ion-grid>        
+<div class="header">
+    <div text-right>
+        <button ion-button icon-only clear color="secondary"><ion-icon name="copy"></ion-icon></button> <button ion-button icon-only clear color="secondary"><ion-icon name="trash"></ion-icon></button>
+    </div>
+    <div class="row">
+        <div text-left class="col"><h2>{{fighter.fighter.name}}</h2></div>
+        <div text-right class="col">{{fighter.fighter.getTypeString()}}</div>
+    </div>
+    <div class="row">
+        <div text-left class="col">{{fighter.fighter.cost}} points</div>
+    </div>
+</div>
 <fighter-characteristics [fighter]="fighter"></fighter-characteristics>

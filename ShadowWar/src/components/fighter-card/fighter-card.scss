@@ -1,7 +1,26 @@
 fighter-card {
 
-    ion-col {
-        border: 1px solid black;
+    .header {
+        //background-color: black;
+        //color: white;
+
+        .row {
+            display: table-row;
+
+            .button-row {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
+
+        .col {
+            display: table-cell;
+
+            .button-col {
+                padding: 0px;
+                margin: 0px;
+            }
+        }
     }
 
 }

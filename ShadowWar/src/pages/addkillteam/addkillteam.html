@@ -1,8 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
     <ion-title>Add Kill Team</ion-title>
   </ion-navbar>
 </ion-header>
@@ -25,15 +23,9 @@
             </ion-item>
         </ion-item-group>
     </ion-list>
-    <div text-center>
-        <button ion-button (click)="onAddFighter()">Add Fighter</button>
-    </div>
-    <div text-center>
-        <button ion-fab (click)="onSave()">
-            <ion-icon name="add"></ion-icon>
-        </button>
-        <button ion-fab (click)="onReset()">
-            <ion-icon name="undo"></ion-icon>
-        </button>
+    <div text-center><button ion-button (click)="onAddFighter()">Add Fighter</button></div>
+    <div text-center class="button-row">
+        <div text-right class="button-col"><button ion-fab (click)="onSave()"><ion-icon name="add"></ion-icon></button></div>
+        <div text-left class="button-col"><button ion-fab (click)="onReset()"><ion-icon name="undo"></ion-icon></button></div>
     </div>
 </ion-content>
