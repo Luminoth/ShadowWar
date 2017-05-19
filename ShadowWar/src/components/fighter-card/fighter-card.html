@@ -1,11 +1,11 @@
-<ion-grid>
+<ion-grid class="header">
     <ion-row>
-        <ion-col align-self-start align-self-stretch no-padding>
-            <ion-row justify-content-start><ion-col align-self-stretch><h2>{{fighter.fighter.name}}</h2></ion-col></ion-row>
-            <ion-row justify-content-start><ion-col align-self-stretch>{{fighter.fighter.getTypeString()}}</ion-col></ion-row>
-        </ion-col>
-        <ion-col align-self-start align-self-stretch no-padding>
-            <ion-row justify-content-end><ion-col>{{fighter.fighter.cost}} points</ion-col></ion-row>
+        <ion-col><div text-left><h2>{{fighter.fighter.name}}</h2></div></ion-col>
+        <ion-col><div text-right>{{fighter.fighter.getTypeString()}}</div></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><div text-left>{{fighter.fighter.cost}} points</div></ion-col>
+        <ion-col>
             <ion-row justify-content-end>
                 <ion-col no-padding><button ion-button icon-only clear color="secondary"><ion-icon name="copy"></ion-icon></button></ion-col>
                 <ion-col no-padding><button ion-button icon-only clear color="secondary"><ion-icon name="trash"></ion-icon></button></ion-col>

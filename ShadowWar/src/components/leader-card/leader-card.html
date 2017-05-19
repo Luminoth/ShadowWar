@@ -1,27 +1,21 @@
-<ion-grid>
+<ion-grid class="header">
     <ion-row>
-        <ion-col align-self-start align-self-stretch no-padding>
-            <ion-row justify-content-start>
-                <ion-col align-self-stretch>
+        <ion-col>
 <!--
-                    <ion-item>
-                        <ion-select item-left [(ngModel)]="selectedLeaderName" class="leaderName">
-                            <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
-                        </ion-select>
-                    </ion-item>
+            <ion-item>
+                <ion-select [(ngModel)]="selectedLeaderName" class="leaderName">
+                    <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
+                </ion-select>
+            </ion-item>
 -->
-                    <div *ngIf="undefined != killTeam.leader"><h2>{{killTeam.leader.fighter.name}}</h2></div>
-                </ion-col>
-            </ion-row>
-            <ion-row justify-content-start><ion-col align-self-stretch><div *ngIf="undefined != killTeam.leader">{{killTeam.leader.fighter.getTypeString()}}</div></ion-col></ion-row>
+            <div text-left *ngIf="undefined != killTeam.leader"><h2>{{killTeam.leader.fighter.name}}</h2></div>
         </ion-col>
-        <ion-col align-self-start align-self-stretch no-padding>
-            <ion-row justify-content-end>
-                <ion-col><div *ngIf="undefined != killTeam.leader">{{killTeam.leader.fighter.cost}} points</div></ion-col>
-            </ion-row>
-            <ion-row justify-content-end>
-                <!-- no buttons -->
-            </ion-row>
+        <ion-col><div text-right *ngIf="undefined != killTeam.leader">{{killTeam.leader.fighter.getTypeString()}}</div></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><div text-left *ngIf="undefined != killTeam.leader">{{killTeam.leader.fighter.cost}} points</div></ion-col>
+        <ion-col>
+            <!-- no buttons -->
         </ion-col>
     </ion-row>
 </ion-grid>

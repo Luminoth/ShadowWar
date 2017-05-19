@@ -1,8 +1,13 @@
 fighter-characteristics {
 
-    ion-col {
+    tr.header {
+        background-color: lightgreen;
+    }
+
+    th.stat, td.value {
         border: 1px solid black;
-        flex: 0;
+        padding: 5px;
+        text-align: center;
     }
 
 }

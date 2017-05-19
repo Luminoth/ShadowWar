@@ -1,5 +1,9 @@
 leader-card {
 
+    ion-col {
+        border: 1px solid black;
+    }
+
     ion-select.leaderName {
         max-width: 100%;
     }

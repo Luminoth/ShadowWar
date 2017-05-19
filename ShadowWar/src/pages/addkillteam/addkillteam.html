@@ -11,16 +11,16 @@
     <!-- TODO: make this a component -->
     <ion-item #factionItem>
         <ion-label>Faction</ion-label>
-        <ion-select [(ngModel)]="selectedFactionName" (ionChange)="onFactionSelected()" class="longSelect">
+        <ion-select [(ngModel)]="selectedFactionName" (ionChange)="onFactionSelected()" class="faction">
             <ion-option *ngFor="let factionName of factionNames">{{factionName}}</ion-option>
         </ion-select>
     </ion-item>
     <ion-list>
-        <ion-item #leaderItem>
+        <ion-item #leaderItem text-center>
             <leader-card [leaderNames]="leaderNames" [selectedLeaderName]="selectedLeaderName" [killTeam]="killTeam"></leader-card>
         </ion-item>
         <ion-item-group reorder="true" (ionItemReorder)="onReorderFighters($event)">
-            <ion-item #fighterItem no-lines *ngFor="let fighter of killTeam.fighters">
+            <ion-item #fighterItem no-lines text-center *ngFor="let fighter of killTeam.fighters">
                 <fighter-card [fighter]="fighter"></fighter-card>
             </ion-item>
         </ion-item-group>
