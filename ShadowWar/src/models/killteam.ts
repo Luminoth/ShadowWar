@@ -4,12 +4,6 @@ import { Faction } from "./faction";
 import { Fighter, FighterType } from "./fighter";
 import { KillTeamFighter } from "./killteamfighter";
 
-export const MinimumModels: number = 3;
-
-export const MaxNewRecruitPercent: number = 0.5;
-
-export const MaximumPoints: number = 1000;
-
 export class KillTeam {
 
     private _id: number;
@@ -47,8 +41,36 @@ export class KillTeam {
         return this._fighters;
     }
 
-    public cost(): number {
-        return this._fighters.map(x => x.fighter.cost).reduce((x, y) => x + y);
+    public get fighterCount(): number {
+        return 1 + this.fighters.length;
+    }
+
+    public get newRecruitCount(): number {
+        return this.fighters.filter(fighter => FighterType.NewRecruit === fighter.fighter.type).length;
+    }
+
+    public get specialistCount(): number {
+        return this.fighters.filter(fighter => FighterType.Specialist === fighter.fighter.type).length;
+    }
+
+    public get maxNewRecruitPercent(): number {
+        return 0.5;
+    }
+
+    public get maximumPoints(): number {
+        return 1000;
+    }
+
+    public get isValid(): boolean {
+        return this.fighterCount >= this.faction.minModels && this.fighterCount <= this.faction.maxModels;
+    }
+
+    public value(): number {
+        const value: number = null === this._leader ? 0 : this._leader.value();
+        if(0 === this._fighters.length) {
+            return value;
+        }
+        return value + this._fighters.map(x => x.value()).reduce((x, y) => x + y);
     }
 
     public setFaction(value: Faction, leader: Fighter): void {
@@ -65,6 +87,10 @@ export class KillTeam {
         if(FighterType.Leader === fighter.type) {
             return;
         }
+
+// TODO: make sure we don't add too many new recruits
+// or too many specialists or straight up too many models
+// not sure if going over points is useful or not
 
         this._fighters.push(new KillTeamFighter(fighter));
     }

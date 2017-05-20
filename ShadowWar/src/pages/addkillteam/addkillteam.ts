@@ -1,5 +1,5 @@
-import { Component } from "@angular/core";
-import { NavController, Platform, AlertController, Alert } from "ionic-angular";
+import { Component, ViewChild } from "@angular/core";
+import { NavController, Platform, AlertController, Alert, Content } from "ionic-angular";
 
 import { DatabaseProvider } from "../../providers/database/database";
 import { FactionProvider } from "../../providers/factions/faction";
@@ -16,6 +16,8 @@ import { KillTeamFighter } from "../../models/killteamfighter";
 })
 
 export class AddKillTeamPage {
+
+    @ViewChild(Content) private content: Content;
 
     private factionNames: string[];
     private selectedFactionName: string;
@@ -43,7 +45,10 @@ export class AddKillTeamPage {
         this.loadFactionNames()
             .then(() => {
                 this.selectedFactionName = this.factionNames[0];
-                this.onFactionSelected();
+                this.onFactionSelected().then(() => {
+                    // fixes toolbar overlapping content when using *ngIf
+                    this.content.resize();
+                });
             });
     }
 

@@ -21,4 +21,9 @@ export class KillTeamFighter {
 
     constructor(private _fighter: Fighter) {
     }
+
+    public value(): number {
+        // TODO: calculate and add in wargear cost
+        return this.fighter.cost;
+    }
 }

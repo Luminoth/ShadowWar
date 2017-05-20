@@ -11,6 +11,7 @@
         faction._name = object.name;
         faction._superFactionName = object.superFactionName;
         faction._specialRules = object.specialRules || [];
+        faction._minModels = object.minModels || 3;
         faction._maxModels = object.maxModels;
         faction._maxSpecialists = object.maxSpecialists;
         return faction;
@@ -38,6 +39,12 @@
 
     public get specialRules(): string[] {
         return this._specialRules;
+    }
+
+    private _minModels: number;
+
+    public get minModels(): number {
+        return this._minModels;
     }
 
     private _maxModels: number;

@@ -1,8 +1,15 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
-    <ion-title>Add Kill Team</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <button ion-button menuToggle><ion-icon name="menu"></ion-icon></button>
+        <ion-title>Add Kill Team</ion-title>
+    </ion-navbar>
+    <ion-toolbar color="header" *ngIf="undefined != killTeam && undefined != killTeam.faction">
+        <!-- TODO: make this a component -->
+        <div>
+            <div>{{killTeam.fighterCount}} / {{killTeam.faction.minModels}} - {{killTeam.faction.maxModels}} models</div>
+            <div>{{killTeam.value()}} / {{killTeam.maximumPoints}} points</div>
+        </div>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
