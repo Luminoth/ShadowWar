@@ -9,8 +9,8 @@
             "maxSpecialists": 2
         },
         {
-            "name": "Space Wolves",
-            "superFactionName":  "Space Marine Scouts"
+            "name": "Space Wolves Wolf Scouts",
+            "superFactionName": "Space Marine Scouts"
         },
         {
             "name": "Astra Militarum Veterans",

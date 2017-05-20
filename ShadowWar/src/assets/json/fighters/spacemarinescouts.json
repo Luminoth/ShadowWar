@@ -59,7 +59,7 @@
         {
             "name": "Novitiate Scout",
             "subFactionRestrictions": [
-                "~Space Wolves"
+                "~Space Wolves Wolf Scouts"
             ],
             "type": "NewRecruit",
             "cost": 75,
