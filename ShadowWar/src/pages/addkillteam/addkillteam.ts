@@ -8,6 +8,7 @@ import { FighterProvider } from "../../providers/fighters/fighter";
 import { Faction } from "../../models/faction";
 import { Fighter, FighterType } from "../../models/fighter";
 import { KillTeam } from "../../models/killteam";
+import { KillTeamFighter } from "../../models/killteamfighter";
 
 @Component({
     selector: "page-addkillteam",
@@ -67,15 +68,16 @@ export class AddKillTeamPage {
         return this.fighterProvider.getFighters(faction)
             .then((fighters) => {
                 this.fighters = fighters;
-                this.leaderNames = [];
 
+                this.leaderNames = [];
                 this.fighterList = [];
+
                 for(let fighter of this.fighters) {
                     if(FighterType.Leader === fighter[1].type) {
                         this.leaderNames.push(fighter[0]);
-                        continue;
+                    } else {
+                        this.fighterList.push(fighter[1]);
                     }
-                    this.fighterList.push(fighter[1]);
                 }
 
                 this.selectedLeaderName = this.leaderNames[0];
@@ -121,6 +123,14 @@ export class AddKillTeamPage {
 
     private onReorderFighters(indexes: any): void {
         this.killTeam.reorderFighters(indexes);
+    }
+
+    private onDeleteFighter(fighter: KillTeamFighter) {
+        this.killTeam.removeFighter(fighter);
+    }
+
+    private onDuplicateFighter(fighter: KillTeamFighter) {
+        // TODO: dupliate
     }
 
     private onSave(): Promise<any> {

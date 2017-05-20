@@ -2,11 +2,7 @@
 
     public static fromJsonObjects(objects: any[]): Faction[] {
 
-        const factions: Faction[] = [];
-        for(let object of objects) {
-            factions.push(this.fromJsonObject(object));
-        }
-        return factions;
+        return objects.map(object => this.fromJsonObject(object));
     }
 
     public static fromJsonObject(object: any): Faction {

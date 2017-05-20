@@ -17,11 +17,7 @@ export class WarGear {
 
     public static fromJsonObjects(objects: any[]): WarGear[] {
 
-        const wargear: WarGear[] = [];
-        for(let object of objects) {
-            wargear.push(this.fromJsonObject(object));
-        }
-        return wargear;
+        return objects.map(object => this.fromJsonObject(object));
     }
 
     public static fromJsonObject(object: any): WarGear {

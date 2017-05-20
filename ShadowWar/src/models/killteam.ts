@@ -69,6 +69,15 @@ export class KillTeam {
         this._fighters.push(new KillTeamFighter(fighter));
     }
 
+    public removeFighter(fighter: KillTeamFighter): void {
+        if(FighterType.Leader === fighter.fighter.type) {
+            return;
+        }
+
+        const idx: number = this.fighters.indexOf(fighter);
+        this.fighters.splice(idx, 1);
+    }
+
     public reorderFighters(indexes: any): void {
         this._fighters = reorderArray(this._fighters, indexes);
     }

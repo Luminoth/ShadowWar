@@ -18,9 +18,21 @@
             <leader-card [leaderNames]="leaderNames" [selectedLeaderName]="selectedLeaderName" [killTeam]="killTeam"></leader-card>
         </ion-item>
         <ion-item-group reorder="true" (ionItemReorder)="onReorderFighters($event)">
-            <ion-item #fighterItem no-lines text-center *ngFor="let fighter of killTeam.fighters">
-                <fighter-card [fighter]="fighter"></fighter-card>
-            </ion-item>
+            <ion-item-sliding *ngFor="let fighter of killTeam.fighters">
+                <ion-item #fighterItem no-lines>
+                    <fighter-card [fighter]="fighter"></fighter-card>
+                </ion-item>
+                <ion-item-options side="right">
+                    <button ion-button icon-only clear color="secondary" (click)="onDuplicateFighter(fighter)">
+                        <ion-icon name="copy"></ion-icon>
+                    </button>
+                </ion-item-options>
+                <ion-item-options side="left">
+                    <button ion-button icon-only clear color="danger" (click)="onDeleteFighter(fighter)">
+                        <ion-icon name="trash"></ion-icon>
+                    </button>
+                </ion-item-options>
+            </ion-item-sliding>
         </ion-item-group>
     </ion-list>
     <div text-center><button ion-button (click)="onAddFighter()">Add Fighter</button></div>

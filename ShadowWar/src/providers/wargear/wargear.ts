@@ -98,21 +98,15 @@ export class WarGearProvider {
     }
 
     private setBaseWarGear(wargear: WarGear[]): void {
-        for(let gear of wargear) {
-            this.baseWarGear.set(gear.name, gear);
-        }
+        wargear.forEach(gear => this.baseWarGear.set(gear.name, gear));
         this.resolveBaseWarGear(this.baseWarGear);
     }
 
     private setWarGear(faction: Faction, wargear: WarGear[]): void {
         const warGearMap: Map<string, WarGear> = new Map<string, WarGear>();
-        for(let gear of this.baseWarGear) {
-            warGearMap.set(gear[0], gear[1]);
-        }
+        this.baseWarGear.forEach(gear => warGearMap.set(gear[0], gear[1]));
+        wargear.forEach(gear => warGearMap.set(gear.name, gear));
 
-        for(let gear of wargear) {
-            warGearMap.set(gear.name, gear);
-        }
         this.resolveBaseWarGear(warGearMap);
         this.wargear.set(faction.name, warGearMap);
     }
@@ -131,11 +125,9 @@ export class WarGearProvider {
 
         return this.getWarGear(faction.superFaction)
             .then((superFactionWarGears) => {
-                for(let superFactionWarGear of superFactionWarGears) {
-                    if(!wargear.has(superFactionWarGear[0])) {
-                        wargear.set(superFactionWarGear[0], superFactionWarGear[1]);
-                    }
-                }
+                [...superFactionWarGears]
+                    .filter(superFactionWarGear => !wargear.has(superFactionWarGear[0]))
+                    .forEach(superFactionWarGear => wargear.set(superFactionWarGear[0], superFactionWarGear[1]));
             });
     }
 }

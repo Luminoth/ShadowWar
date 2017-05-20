@@ -76,22 +76,17 @@ export class ArmoryProvider {
 
     private setArmory(faction: Faction, armory: EquipmentList[]): void {
         const equipmentMap: Map<string, EquipmentList> = new Map<string, EquipmentList>();
-        for(let equipmentList of armory) {
-            equipmentMap.set(equipmentList.name, equipmentList);
-        }
+        armory.forEach(equipmentList => equipmentMap.set(equipmentList.name, equipmentList));
         this.armory.set(faction.name, equipmentMap);
     }
 
     private resolveSuperFaction(faction: Faction): Promise<void> {
         const armory: Map<string, EquipmentList> = this.armory.get(faction.name);
-
         return this.getArmory(faction.superFaction)
             .then((superFactionArmory) => {
-                for(let superFactionEquipmentList of superFactionArmory) {
-                    if(!armory.has(superFactionEquipmentList[0])) {
-                        armory.set(superFactionEquipmentList[0], superFactionEquipmentList[1]);
-                    }
-                }
+                [...superFactionArmory]
+                    .filter(superFactionEquipmentList => !armory.has(superFactionEquipmentList[0]))
+                    .forEach(superFactionEquipmentList => armory.set(superFactionEquipmentList[0], superFactionEquipmentList[1]));
             });
     }
 }

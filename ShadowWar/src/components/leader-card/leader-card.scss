@@ -1,26 +1,25 @@
 leader-card {
 
     .header {
-        //background-color: black;
-        //color: white;
+        background-color: grey;
+        color: white;
+        border: 1px solid black;
 
         .row {
             display: table-row;
-
-            .button-row {
-                padding: 0px;
-                margin: 0px;
-            }
         }
 
         .col {
             display: table-cell;
-
-            .button-col {
-                padding: 0px;
-                margin: 0px;
-            }
         }
+    }
+
+    ion-select.leaderName {
+        max-width: 75%;
+    }
+
+    .item-inner ion-reorder {
+        display: none;
     }
 
 }

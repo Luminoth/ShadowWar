@@ -85,9 +85,7 @@ export class FactionProvider {
     }
 
     private setFactions(factions: Faction[]): void {
-        for(let faction of factions) {
-            this.factions.set(faction.name, faction);
-        }
+        factions.forEach(faction => this.factions.set(faction.name, faction));
 
         this.resolveSuperFactions();
 

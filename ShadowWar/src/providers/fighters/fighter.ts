@@ -77,26 +77,19 @@ export class FighterProvider {
 
     private setFighters(faction: Faction, fighters: Fighter[]): void {
         const fighterMap: Map<string, Fighter> = new Map<string, Fighter>();
-        for(let fighter of fighters) {
-            fighterMap.set(fighter.name, fighter);
-        }
+        fighters.forEach(fighter => fighterMap.set(fighter.name, fighter));
         this.fighters.set(faction.name, fighterMap);
     }
 
     private resolveSuperFaction(faction: Faction): Promise<void> {
         const fighters: Map<string, Fighter> = this.fighters.get(faction.name);
-
         return this.getFighters(faction.superFaction)
             .then((superFactionFighters) => {
-                for(let superFactionFighter of superFactionFighters) {
-                    if(!this.restrictionValidator.validateRestriction(faction.name, superFactionFighter[1].subFactionRestrictions)) {
-                        continue;
-                    }
-
-                    if(!fighters.has(superFactionFighter[0])) {
-                        fighters.set(superFactionFighter[0], superFactionFighter[1]);
-                    }
-                }
+                [...superFactionFighters]
+                    .filter(superFactionFighter =>
+                        this.restrictionValidator.validateRestriction(faction.name, superFactionFighter[1].subFactionRestrictions)
+                        && !fighters.has(superFactionFighter[0]))
+                    .forEach(superFactionFighter => fighters.set(superFactionFighter[0], superFactionFighter[1]));
             });
     }
 }

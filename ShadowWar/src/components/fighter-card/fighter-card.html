@@ -1,6 +1,9 @@
 <div class="header">
-    <div text-right>
-        <button ion-button icon-only clear color="secondary"><ion-icon name="copy"></ion-icon></button> <button ion-button icon-only clear color="secondary"><ion-icon name="trash"></ion-icon></button>
+    <div class="row">
+        <ion-item>
+            <ion-label floating>Fighter Name</ion-label>
+            <ion-input type="text" clearInput="true" [(ngModel)]="fighter.name" class="item-inner"></ion-input>
+        </ion-item>
     </div>
     <div class="row">
         <div text-left class="col"><h2>{{fighter.fighter.name}}</h2></div>

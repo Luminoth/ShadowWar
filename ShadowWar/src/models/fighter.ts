@@ -11,11 +11,7 @@ export class Fighter {
 
     public static fromJsonObjects(objects: any[]): Fighter[] {
 
-        const fighters: Fighter[] = [];
-        for(let object of objects) {
-            fighters.push(this.fromJsonObject(object));
-        }
-        return fighters;
+        return objects.map(object => this.fromJsonObject(object));
     }
 
     public static fromJsonObject(object: any): Fighter {
@@ -50,6 +46,9 @@ export class Fighter {
     }
 
     public getTypeString(): string {
+        if(this._type === FighterType.NewRecruit) {
+            return "New Recruit";
+        }
         return FighterType[this._type];
     }
 

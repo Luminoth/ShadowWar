@@ -1,14 +1,17 @@
 <div class="header" *ngIf="undefined != killTeam.leader">
     <div class="row">
+        <ion-item>
+            <ion-label floating>Leader Name</ion-label>
+            <ion-input type="text" clearInput="true" [(ngModel)]="killTeam.leader.name"></ion-input>
+        </ion-item>
+    </div>
+    <div class="row">
         <div text-left class="col">
-            <!--
-            <ion-item>
+            <ion-item class="item-inner">
                 <ion-select [(ngModel)]="selectedLeaderName" class="leaderName">
                     <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
                 </ion-select>
             </ion-item>
-            -->
-            <h2>{{killTeam.leader.fighter.name}}</h2>
         </div>
         <div text-right class="col">{{killTeam.leader.fighter.getTypeString()}}</div>
     </div>

@@ -2,11 +2,7 @@
 
     public static fromJsonObjects(objects: any[]): Equipment[] {
 
-        const equipment: Equipment[] = [];
-        for(let object of objects) {
-            equipment.push(this.fromJsonObject(object));
-        }
-        return equipment;
+        return objects.map(object => this.fromJsonObject(object));
     }
 
     public static fromJsonObject(object: any): Equipment {
@@ -35,11 +31,7 @@ export class EquipmentList {
 
     public static fromJsonObjects(objects: any[]): EquipmentList[] {
 
-        const equipmentLists: EquipmentList[] = [];
-        for(let object of objects) {
-            equipmentLists.push(this.fromJsonObject(object));
-        }
-        return equipmentLists;
+        return objects.map(object => this.fromJsonObject(object));
     }
 
     public static fromJsonObject(object: any): EquipmentList {
