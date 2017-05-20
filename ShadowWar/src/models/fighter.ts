@@ -4,7 +4,8 @@ export enum FighterType {
     Leader,
     Trooper,
     NewRecruit,
-    Specialist
+    Specialist,
+    Drone
 }
 
 export class Fighter {

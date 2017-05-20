@@ -20,6 +20,8 @@ export class AddKillTeamPage {
     @ViewChild(Content) private content: Content;
 
     private factionNames: string[];
+
+    private lastSelectedFactionName: string;
     private selectedFactionName: string;
 
     private leaderNames: string[];
@@ -56,13 +58,22 @@ export class AddKillTeamPage {
             });
     }
 
+// TODO: handle more promise errors!
+
     private onFactionSelected(): Promise<any> {
         return this.factionProvider.getFaction(this.selectedFactionName)
             .then((faction) => {
                 this.loadFighters(faction)
                     .then(() => {
+                        this.lastSelectedFactionName = this.selectedFactionName;
                         this.setFaction(faction);
+                    }).catch(() => {
+                        this.selectedFactionName = this.lastSelectedFactionName;
+                        this.onFactionSelected();
                     });
+            }).catch(() => {
+                this.selectedFactionName = this.lastSelectedFactionName;
+                this.onFactionSelected();
             });
     }
 

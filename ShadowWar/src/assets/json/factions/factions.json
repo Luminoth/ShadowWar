@@ -4,9 +4,7 @@
             "name": "Space Marine Scouts",
             "specialRules": [
                 "And They Shall Know No Fear"
-            ],
-            "maxModels": 10,
-            "maxSpecialists": 2
+            ]
         },
         {
             "name": "Space Wolves Wolf Scouts",
@@ -17,7 +15,6 @@
             "specialRules": [
                 "Voice of Command"
             ],
-            "maxModels": 10,
             "maxSpecialists": 3
         },
         {
@@ -26,8 +23,86 @@
                 "'Ere We Go!",
                 "Mob Rule"
             ],
-            "maxModels": 20,
-            "maxSpecialists": 2
+            "maxModels": 20
+        },
+        {
+            "name": "Adepta Sororitas",
+            "specialRules": [
+                "Shield of Faith",
+                "Light of the Emperor"
+            ]
+        },
+        {
+            "name": "Chaos Space Marines",
+            "specialRules": [
+                "Marks of Chaos"
+            ]
+        },
+        {
+            "name": "Dark Eldar Wych Cults",
+            "specialRules": [
+                "Combat Drugs"
+            ]
+        },
+        {
+            "name": "Craftworld Eldar",
+            "specialRules": [
+                "Battle Focus"
+            ]
+        },
+        {
+            "name": "Genestealer Cult Hybrids",
+            "specialRules": [
+                "Lying in Wait"
+            ],
+            "maxModels": 15,
+            "maxSpecialists": 3
+        },
+        {
+            "name": "Grey Knights",
+            "specialRules": [
+                "And They Shall Know No Fear"
+            ],
+            "maxModels": 5
+        },
+        {
+            "name": "Harlequin Troupes",
+            "specialRules": [
+                "Prismatic Blur"
+            ],
+            "maxModels": 6
+        },
+        {
+            "name": "Inquisition",
+            "specialRules": [
+                "Alien Hunters"
+            ]
+        },
+        {
+            "name": "Necron",
+            "specialRules": [
+                "Reanimation Protocols"
+            ]
+        },
+        {
+            "name": "Skitarii Rangers",
+            "specialRules": [
+                "Artificer Weaponry"
+            ],
+            "maxSpecialists": 3
+        },
+        {
+            "name": "Tau Pathfinders",
+            "specialRules": [
+                "Supporting Fire"
+            ]
+        },
+        {
+            "name": "Tyranid Warriors",
+            "specialRules": [
+                "Synapse Creature"
+            ],
+            "maxModels": 5
         }
     ]
 }

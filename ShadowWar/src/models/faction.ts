@@ -12,8 +12,9 @@
         faction._superFactionName = object.superFactionName;
         faction._specialRules = object.specialRules || [];
         faction._minModels = object.minModels || 3;
-        faction._maxModels = object.maxModels;
-        faction._maxSpecialists = object.maxSpecialists;
+        faction._maxModels = object.maxModels || 10;
+        faction._maxSpecialists = object.maxSpecialists || 2;
+        faction._maxDrones = object.maxDrones || 3;
         return faction;
     }
 
@@ -57,6 +58,12 @@
 
     public get maxSpecialists(): number {
         return this._maxSpecialists;
+    }
+
+    private _maxDrones: number;
+
+    public get maxDrones(): number {
+        return this._maxDrones;
     }
 
     public getDataFileName(): string {
