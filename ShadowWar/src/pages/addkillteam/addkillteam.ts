@@ -45,10 +45,7 @@ export class AddKillTeamPage {
         this.loadFactionNames()
             .then(() => {
                 this.selectedFactionName = this.factionNames[0];
-                this.onFactionSelected().then(() => {
-                    // fixes toolbar overlapping content when using *ngIf
-                    this.content.resize();
-                });
+                this.onFactionSelected();
             });
     }
 
@@ -92,6 +89,9 @@ export class AddKillTeamPage {
 
     private setFaction(faction: Faction): void {
         this.killTeam.setFaction(faction, this.fighters.get(this.selectedLeaderName));
+
+        // fixes toolbar overlapping content when using *ngIf
+        this.content.resize();
     }
 
     private onAddFighter(): void {
