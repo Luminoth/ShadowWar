@@ -65,12 +65,19 @@ export class AddKillTeamPage {
             .then((faction) => {
                 this.loadFighters(faction)
                     .then(() => {
-                        this.lastSelectedFactionName = this.selectedFactionName;
                         if(!this.setFaction(faction)) {
                             this.selectLastFaction();
                             return;
                         }
+                        this.lastSelectedFactionName = this.selectedFactionName;
                     }).catch(() => {
+                        const alert: Alert = this.alertCtrl.create({
+                            title: "Data Error",
+                            message: "There was an error loading fighter data!",
+                            buttons: [ "Ok" ]
+                        });
+                        alert.present();
+
                         this.selectedFactionName = this.lastSelectedFactionName;
                         this.onFactionSelected();
                     });
@@ -101,8 +108,7 @@ export class AddKillTeamPage {
                 }
 
                 if(0 === this.leaderNames.length) {
-                    Promise.reject("No leaders found!");
-                    return;
+                    return Promise.reject("No leaders found!");
                 }
 
                 this.selectedLeaderName = this.leaderNames[0];
