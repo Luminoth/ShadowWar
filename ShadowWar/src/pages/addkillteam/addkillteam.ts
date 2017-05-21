@@ -66,15 +66,22 @@ export class AddKillTeamPage {
                 this.loadFighters(faction)
                     .then(() => {
                         this.lastSelectedFactionName = this.selectedFactionName;
-                        this.setFaction(faction);
+                        if(!this.setFaction(faction)) {
+                            this.selectLastFaction();
+                            return;
+                        }
                     }).catch(() => {
                         this.selectedFactionName = this.lastSelectedFactionName;
                         this.onFactionSelected();
                     });
             }).catch(() => {
-                this.selectedFactionName = this.lastSelectedFactionName;
-                this.onFactionSelected();
+                this.selectLastFaction();
             });
+    }
+
+    private selectLastFaction(): Promise<any> {
+        this.selectedFactionName = this.lastSelectedFactionName;
+        return this.onFactionSelected();
     }
 
     private loadFighters(faction: Faction): Promise<any> {
@@ -93,16 +100,27 @@ export class AddKillTeamPage {
                     }
                 }
 
+                if(0 === this.leaderNames.length) {
+                    Promise.reject("No leaders found!");
+                    return;
+                }
+
                 this.selectedLeaderName = this.leaderNames[0];
                 this.fighterList.sort((x, y) => x.type - y.type);
             });
     }
 
-    private setFaction(faction: Faction): void {
+    private setFaction(faction: Faction): boolean {
+        if(!this.fighters.has(this.selectedLeaderName)) {
+            return false;
+        }
+
         this.killTeam.setFaction(faction, this.fighters.get(this.selectedLeaderName));
 
         // fixes toolbar overlapping content when using *ngIf
         this.content.resize();
+
+        return true;
     }
 
     private onAddFighter(): void {

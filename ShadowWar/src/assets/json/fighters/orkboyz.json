@@ -26,6 +26,86 @@
                 "Grenades",
                 "Miscellaneous"
             ]
+        },
+        {
+            "name": "Boy",
+            "type": "Trooper",
+            "cost": 60,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 2,
+                "s": 3,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 2,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Shank",
+                "Squig-hide Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Yoof",
+            "type": "NewRecruit",
+            "cost": 30,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 2,
+                "s": 3,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Shank",
+                "Squig-hide Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Spanner Boy",
+            "type": "Specialist",
+            "cost": 70,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 2,
+                "s": 3,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 2,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Shank",
+                "Squig-hide Armour"
+            ],
+            "availableWarGearLists": [
+                "Pistols",
+                "Special Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
         }
     ]
 }
