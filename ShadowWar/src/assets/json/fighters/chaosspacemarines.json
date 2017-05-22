@@ -1,4 +1,118 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Aspiring Champion",
+            "type": "Leader",
+            "cost": 225,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ],
+            "specialRules": [
+                "Champion of Chaos"
+            ]
+        },
+        {
+            "name": "Chaos Space Marine",
+            "type": "Trooper",
+            "cost": 120,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Chaos Cultist",
+            "type": "NewRecruit",
+            "cost": 40,
+            "characteristics": {
+                "m": 3,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Improvised Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Chaos Gunner",
+            "type": "Specialist",
+            "cost": 130,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Heavy Weapons",
+                "Special Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

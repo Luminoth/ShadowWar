@@ -1,4 +1,120 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Neophyte Leader",
+            "type": "Leader",
+            "cost": 120,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 4,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Mining Suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ],
+            "specialRules": [
+                "Brood Command"
+            ]
+        },
+        {
+            "name": "Neophyte Hybrid",
+            "type": "Trooper",
+            "cost": 60,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Mining Suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Neophyte Initiate",
+            "type": "NewRecruit",
+            "cost": 50,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Mining Suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Neophyte Heavy",
+            "type": "Specialist",
+            "cost": 70,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Mining Suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Special Weapons",
+                "Heavy Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

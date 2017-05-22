@@ -1,4 +1,113 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Tyranid Alpha",
+            "type": "Leader",
+            "cost": 250,
+            "characteristics": {
+                "m": 5,
+                "ws": 5,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 3,
+                "i": 4,
+                "a": 3,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Scything Talons",
+                "Chitin Carapace"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Bio-weapons", 1 ],
+                [ "Basic Bio-weapons", 1 ]
+            ],
+            "availableWarGearLists": [
+                "Biomorphs"
+            ]
+        },
+        {
+            "name": "Tyranid Warrior",
+            "type": "Trooper",
+            "cost": 200,
+            "characteristics": {
+                "m": 5,
+                "ws": 5,
+                "bs": 3,
+                "s": 4,
+                "t": 4,
+                "w": 3,
+                "i": 4,
+                "a": 3,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Scything Talons",
+                "Chitin Carapace"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Bio-weapons", 1 ],
+                [ "Basic Bio-weapons", 1 ]
+            ],
+            "availableWarGearLists": [
+                "Biomorphs"
+            ]
+        },
+        {
+            "name": "Tyranid New-Spawn",
+            "type": "NewRecruit",
+            "cost": 175,
+            "characteristics": {
+                "m": 5,
+                "ws": 4,
+                "bs": 3,
+                "s": 4,
+                "t": 4,
+                "w": 3,
+                "i": 4,
+                "a": 3,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Scything Talons",
+                "Chitin Carapace"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Bio-weapons", 1 ],
+                [ "Basic Bio-weapons", 1 ]
+            ],
+            "availableWarGearLists": [
+                "Biomorphs"
+            ]
+        },
+        {
+            "name": "Tyranid Gun-Beast",
+            "type": "Specialist",
+            "cost": 225,
+            "characteristics": {
+                "m": 5,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 3,
+                "i": 4,
+                "a": 3,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Scything Talons",
+                "Chitin Carapace"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Bio-weapons", 1 ],
+                [ "Basic Bio-weapons", 1 ],
+                [ "Bio-cannons", 1]
+            ],
+            "availableWarGearLists": [
+                "Biomorphs"
+            ]
+        }
     ]
 }

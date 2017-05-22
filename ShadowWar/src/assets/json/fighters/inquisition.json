@@ -1,4 +1,117 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Ordo Xenos Inquisitor",
+            "type": "Leader",
+            "cost": 225,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 3,
+                "i": 4,
+                "a": 3,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Carapace Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Special Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Inquisitorial Acolyte",
+            "type": "Trooper",
+            "cost": 65,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Flak Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Special Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Inquisitorial Initiate",
+            "type": "NewRecruit",
+            "cost": 50,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Flak Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Crusader",
+            "type": "Specialist",
+            "cost": 85,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Carapace Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

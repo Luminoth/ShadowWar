@@ -27,7 +27,8 @@ export class WarGear {
         wargear._baseWarGear = object.baseWarGear;
         wargear._type = WarGearType[object.type as string];
         wargear._characteristics = WarGearCharacteristics.fromJsonObject(object.characteristics);
-        wargear._specialRules = object.specialRules;
+        wargear._maxAvailable = object.maxAvailable || -1;
+        wargear._specialRules = object.specialRules || [];
         return wargear;
     }
 
@@ -53,6 +54,12 @@ export class WarGear {
 
     public get characteristics(): WarGearCharacteristics {
         return this._characteristics;
+    }
+
+    private _maxAvailable: number;
+
+    public get maxAvailable(): number {
+        return this._maxAvailable;
     }
 
     private _specialRules: string[];

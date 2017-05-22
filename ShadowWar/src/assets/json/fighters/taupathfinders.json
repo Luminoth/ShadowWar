@@ -1,4 +1,110 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Pathfinder Shas'Ui",
+            "type": "Leader",
+            "cost": 140,
+            "characteristics": {
+                "m": 4,
+                "ws": 2,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Recon Armour"
+            ],
+            "availableWarGearLists": [
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ],
+            "specialRules": [
+                "Bonding Knife Ritual"
+            ]
+        },
+        {
+            "name": "Pathfinder",
+            "type": "Trooper",
+            "cost": 60,
+            "characteristics": {
+                "m": 4,
+                "ws": 2,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Recon Armour"
+            ],
+            "availableWarGearLists": [
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Pathfinder Cadet",
+            "type": "NewRecruit",
+            "cost": 50,
+            "characteristics": {
+                "m": 4,
+                "ws": 2,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Recon Armour"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Pathfinder Specialist",
+            "type": "Specialist",
+            "cost": 60,
+            "characteristics": {
+                "m": 4,
+                "ws": 2,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 7
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Recon Armour"
+            ],
+            "availableWarGearLists": [
+                "Pistols",
+                "Special Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

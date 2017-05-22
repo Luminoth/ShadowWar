@@ -1,4 +1,103 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Appointed Immortal",
+            "type": "Leader",
+            "cost": 200,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Immortal Exoskeleton"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Immortal",
+            "type": "Trooper",
+            "cost": 110,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Immortal Exoskeleton"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Warrior",
+            "type": "NewRecruit",
+            "cost": 80,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Warrior Exoskeleton"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Deathmark",
+            "type": "Specialist",
+            "cost": 120,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 2,
+                "a": 1,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Immortal Exoskeleton"
+            ],
+            "availableWarGearLists": [
+                "Special Weapons",
+                "Miscellaneous"
+            ],
+            "specialRules": [
+                "Ethereal Interception"
+            ]
+        }
     ]
 }

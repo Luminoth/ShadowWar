@@ -1,4 +1,114 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Sister Superior",
+            "type": "Leader",
+            "cost": 175,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 4,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Special Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Battle Sister",
+            "type": "Trooper",
+            "cost": 90,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Novitiate",
+            "type": "NewRecruit",
+            "cost": 80,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Gunner",
+            "type": "Specialist",
+            "cost": 100,
+            "characteristics": {
+                "m": 4,
+                "ws": 3,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 3,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Power Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Special Weapons",
+                "Heavy Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

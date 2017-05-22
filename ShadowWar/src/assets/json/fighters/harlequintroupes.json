@@ -1,4 +1,116 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Troupe Master",
+            "type": "Leader",
+            "cost": 300,
+            "characteristics": {
+                "m": 6,
+                "ws": 6,
+                "bs": 5,
+                "s": 3,
+                "t": 3,
+                "w": 2,
+                "i": 7,
+                "a": 3,
+                "ld": 10
+            },
+            "standardWarGear": [
+                "Concealed Blade",
+                "Harlequin Mask",
+                "Flip Belt",
+                "Holo-suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Player",
+            "type": "Trooper",
+            "cost": 150,
+            "characteristics": {
+                "m": 6,
+                "ws": 5,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Concealed Blade",
+                "Harlequin Mask",
+                "Flip Belt",
+                "Holo-suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Mime",
+            "type": "NewRecruit",
+            "cost": 125,
+            "characteristics": {
+                "m": 6,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Concealed Blade",
+                "Harlequin Mask",
+                "Flip Belt",
+                "Holo-suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Virtuoso",
+            "type": "NewRecruit",
+            "cost": 175,
+            "characteristics": {
+                "m": 6,
+                "ws": 5,
+                "bs": 5,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Concealed Blade",
+                "Harlequin Mask",
+                "Flip Belt",
+                "Holo-suit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

@@ -1,4 +1,107 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Dire Avenger Exarch",
+            "type": "Leader",
+            "cost": 240,
+            "characteristics": {
+                "m": 5,
+                "ws": 5,
+                "bs": 5,
+                "s": 3,
+                "t": 3,
+                "w": 2,
+                "i": 6,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Aspect Armour"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Dire Avenger",
+            "type": "Trooper",
+            "cost": 100,
+            "characteristics": {
+                "m": 5,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 5,
+                "a": 1,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Aspect Armour"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Guardian Defender",
+            "type": "NewRecruit",
+            "cost": 80,
+            "characteristics": {
+                "m": 5,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 5,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Mesh Armour"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Guardian Defender Gunner",
+            "type": "Specialist",
+            "cost": 90,
+            "characteristics": {
+                "m": 5,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 5,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Combat Blade",
+                "Mesh Armour"
+            ],
+            "availableWarGearLists": [
+                "Basic Weapons",
+                "Grenades",
+                "Miscellaneous",
+                "Heavy Weapon Platform Weapons"
+            ]
+        }
     ]
 }

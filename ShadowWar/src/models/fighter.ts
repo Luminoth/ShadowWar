@@ -23,8 +23,11 @@ export class Fighter {
         fighter._type = FighterType[object.type as string];
         fighter._cost = object.cost;
         fighter._characteristics = FighterCharacteristics.fromJsonObject(object.characteristics);
-        fighter._standardWarGear = object.standardWarGear;
-        fighter._availableWarGearLists = object.availableWarGearLists;
+        fighter._specialRules = object.specialRules || [];
+        fighter._standardWarGear = object.standardWarGear || [];
+        fighter._requiredWarGear = object.requiredWarGear || [];
+        fighter._availableWarGearLists = object.availableWarGearLists || [];
+        fighter._psychicAbilities = object.psychicAbilities || [];
         return fighter;
     }
 
@@ -65,15 +68,33 @@ export class Fighter {
         return this._characteristics;
     }
 
+    private _specialRules: string[];
+
+    public get specialRules(): string[] {
+        return this._specialRules;
+    }
+
     private _standardWarGear: string[];
 
     public get standardWarGear(): string[] {
         return this._standardWarGear;
     }
 
+    private _requiredWarGear: [string, number][];
+
+    public get requiredWarGear(): [string, number][] {
+        return this._requiredWarGear;
+    }
+
     private _availableWarGearLists: string[];
 
     public get availableWarGearLists(): string[] {
         return this._availableWarGearLists;
+    }
+
+    private _psychicAbilities: string[];
+
+    public get psychicAbilities(): string[] {
+        return this._psychicAbilities;
     }
 }

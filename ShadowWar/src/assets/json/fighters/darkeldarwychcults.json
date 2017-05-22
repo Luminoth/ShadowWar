@@ -1,4 +1,110 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Syren",
+            "type": "Leader",
+            "cost": 150,
+            "characteristics": {
+                "m": 6,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 3,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Wych Knife",
+                "Wychsuit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Gladiatorial Weapons",
+                "Pistols",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Wych",
+            "type": "Trooper",
+            "cost": 80,
+            "characteristics": {
+                "m": 6,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Wych Knife",
+                "Wychsuit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Debutante",
+            "type": "NewRecruit",
+            "cost": 70,
+            "characteristics": {
+                "m": 6,
+                "ws": 3,
+                "bs": 3,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Wych Knife",
+                "Wychsuit"
+            ],
+            "availableWarGearLists": [
+                "Hand-to-Hand Weapons",
+                "Pistols",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        },
+        {
+            "name": "Bloodbride",
+            "type": "Specialist",
+            "cost": 100,
+            "characteristics": {
+                "m": 6,
+                "ws": 4,
+                "bs": 4,
+                "s": 3,
+                "t": 3,
+                "w": 1,
+                "i": 6,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Wych Knife",
+                "Wychsuit"
+            ],
+            "availableWarGearLists": [
+                "Gladiatorial Weapons",
+                "Grenades",
+                "Miscellaneous"
+            ]
+        }
     ]
 }

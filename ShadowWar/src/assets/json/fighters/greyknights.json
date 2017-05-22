@@ -1,4 +1,99 @@
 ﻿{
     "fighters": [
+        {
+            "name": "Justicar",
+            "type": "Leader",
+            "cost": 250,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 2,
+                "ld": 9
+            },
+            "standardWarGear": [
+                "Storm Bolter",
+                "Power Armour"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Weapons", 1 ]
+            ],
+            "availableWarGearLists": [
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ],
+            "psychicAbilities": [
+                "Hammerhand",
+                "Purge Soul"
+            ]
+        },
+        {
+            "name": "Grey Knight",
+            "type": "Trooper",
+            "cost": 175,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Storm Bolter",
+                "Power Armour"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Weapons", 1 ]
+            ],
+            "availableWarGearLists": [
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ],
+            "psychicAbilities": [
+                "Hammerhand"
+            ]
+        },
+        {
+            "name": "Grey Knight Gunner",
+            "type": "Specialist",
+            "cost": 200,
+            "characteristics": {
+                "m": 4,
+                "ws": 4,
+                "bs": 4,
+                "s": 4,
+                "t": 4,
+                "w": 1,
+                "i": 4,
+                "a": 1,
+                "ld": 8
+            },
+            "standardWarGear": [
+                "Storm Bolter",
+                "Power Armour"
+            ],
+            "requiredWarGear": [
+                [ "Hand-to-Hand Weapons", 1 ]
+            ],
+            "availableWarGearLists": [
+                "Ammunition",
+                "Grenades",
+                "Miscellaneous"
+            ],
+            "psychicAbilities": [
+                "Astral Aim",
+                "Hammerhand"
+            ]
+        }
     ]
 }
