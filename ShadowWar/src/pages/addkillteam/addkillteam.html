@@ -43,8 +43,10 @@
         </ion-item-group>
     </ion-list>
     <div text-center><button ion-button (click)="onAddFighter()">Add Fighter</button></div>
-    <div text-center class="button-row">
-        <div text-right class="button-col"><button ion-fab (click)="onSave()"><ion-icon name="add"></ion-icon></button></div>
-        <div text-left class="button-col"><button ion-fab (click)="onReset()"><ion-icon name="undo"></ion-icon></button></div>
-    </div>
+    <ion-grid>
+        <ion-row>
+            <ion-col><div text-right><button ion-fab (click)="onSave()"><ion-icon name="add"></ion-icon></button></div></ion-col>
+            <ion-col><div text-left><button ion-fab (click)="onReset()"><ion-icon name="undo"></ion-icon></button></div></ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

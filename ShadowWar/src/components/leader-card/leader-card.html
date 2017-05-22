@@ -1,22 +1,26 @@
-<div class="header" *ngIf="undefined != killTeam.leader">
-    <div class="row">
-        <ion-item>
-            <ion-label floating>Leader Name</ion-label>
-            <ion-input type="text" clearInput="true" [(ngModel)]="killTeam.leader.name"></ion-input>
-        </ion-item>
-    </div>
-    <div class="row">
-        <div text-left class="col">
-            <ion-item class="item-inner">
-                <ion-select [(ngModel)]="selectedLeaderName" class="leaderName">
-                    <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
-                </ion-select>
+<ion-grid class="header" *ngIf="undefined != killTeam.leader">
+    <ion-row>
+        <ion-col>
+            <ion-item color="header" class="item-inner">
+                <ion-label floating color="dark">Leader Name</ion-label>
+                <ion-input type="text" clearInput="true" [(ngModel)]="killTeam.leader.name"></ion-input>
             </ion-item>
-        </div>
-        <div text-right class="col">{{killTeam.leader.fighter.getTypeString()}}</div>
-    </div>
-    <div class="row">
-        <div text-left class="col">{{killTeam.leader.fighter.cost}} points</div>
-    </div>
-</div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <div text-left>
+                <ion-item color="header" class="item-inner">
+                    <ion-select [(ngModel)]="selectedLeaderName" class="leaderName">
+                        <ion-option *ngFor="let leaderName of leaderNames">{{leaderName}}</ion-option>
+                    </ion-select>
+                </ion-item>
+            </div>
+        </ion-col>
+        <ion-col col-auto><div text-right>{{killTeam.leader.fighter.getTypeString()}}</div></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><div text-left>{{killTeam.leader.fighter.cost}} points</div></ion-col>
+    </ion-row>
+</ion-grid>
 <fighter-characteristics *ngIf="undefined != killTeam.leader" [fighter]="killTeam.leader"></fighter-characteristics>

@@ -1,16 +1,18 @@
-<div class="header">
-    <div class="row">
-        <ion-item>
-            <ion-label floating>Fighter Name</ion-label>
-            <ion-input type="text" clearInput="true" [(ngModel)]="fighter.name" class="item-inner"></ion-input>
-        </ion-item>
-    </div>
-    <div class="row">
-        <div text-left class="col"><h2>{{fighter.fighter.name}}</h2></div>
-        <div text-right class="col">{{fighter.fighter.getTypeString()}}</div>
-    </div>
-    <div class="row">
-        <div text-left class="col">{{fighter.fighter.cost}} points</div>
-    </div>
-</div>
+<ion-grid class="header">
+    <ion-row>
+        <ion-col>
+            <ion-item color="header" class="item-inner">
+                <ion-label floating color="dark">Fighter Name</ion-label>
+                <ion-input type="text" clearInput="true" [(ngModel)]="fighter.name"></ion-input>
+            </ion-item>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><div text-left><h2>{{fighter.fighter.name}}</h2></div></ion-col>
+        <ion-col col-auto><div text-right>{{fighter.fighter.getTypeString()}}</div></ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col><div text-left>{{fighter.fighter.cost}} points</div></ion-col>
+    </ion-row>
+</ion-grid>
 <fighter-characteristics [fighter]="fighter"></fighter-characteristics>

@@ -4,14 +4,6 @@ fighter-card {
         background-color: color($colors, header);
         color: white;
         border: 1px solid black;
-
-        .row {
-            display: table-row;
-        }
-
-        .col {
-            display: table-cell;
-        }
     }
 
     .item-inner ion-reorder {
