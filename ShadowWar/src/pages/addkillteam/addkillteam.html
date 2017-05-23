@@ -21,12 +21,12 @@
         </ion-select>
     </ion-item>
     <ion-list>
-        <ion-item #leaderItem text-center>
+        <ion-item #leaderItem>
             <leader-card [leaderNames]="leaderNames" [selectedLeaderName]="selectedLeaderName" [killTeam]="killTeam"></leader-card>
         </ion-item>
         <ion-item-group reorder="true" (ionItemReorder)="onReorderFighters($event)">
             <ion-item-sliding *ngFor="let fighter of killTeam.fighters">
-                <ion-item #fighterItem no-lines>
+                <ion-item #fighterItem>
                     <fighter-card [fighter]="fighter"></fighter-card>
                 </ion-item>
                 <ion-item-options side="right">
