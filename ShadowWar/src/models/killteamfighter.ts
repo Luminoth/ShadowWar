@@ -19,7 +19,19 @@ export class KillTeamFighter {
 
     private _wargear: KillTeamFighterWarGear[] = [];
 
+    public get wargear(): KillTeamFighterWarGear[] {
+        return this._wargear;
+    }
+
     constructor(private _fighter: Fighter) {
+    }
+
+    private onWargearSelected(): void {
+    }
+
+    private addWarGear(): void {
+// TODO: add the wargear
+        this._wargear.sort((x, y) => x.wargear.compareTo(y.wargear));
     }
 
     public value(): number {

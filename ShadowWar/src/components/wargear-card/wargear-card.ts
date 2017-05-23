@@ -1,4 +1,6 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
+
+import { KillTeamFighter } from "../../models/killteamfighter";
 
 @Component({
     selector: "wargear-card",
@@ -6,5 +8,7 @@ import { Component } from "@angular/core";
 })
 
 export class WargearCardComponent {
+
+    @Input() private fighter: KillTeamFighter;
 
 }

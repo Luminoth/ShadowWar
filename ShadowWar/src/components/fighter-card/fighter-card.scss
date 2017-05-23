@@ -6,6 +6,10 @@ fighter-card {
         border: 1px solid black;
     }
 
+    ion-select.wargearName {
+        max-width: 75%;
+    }
+
     .item-inner ion-reorder {
         display: none;
     }

@@ -1,8 +1,13 @@
 <ion-item no-lines>
     <ion-label>Add Wargear</ion-label>
-    <ion-select>
-        <ion-option>Junk</ion-option>
+    <ion-select (ionChange)="onWargearSelected()" class="wargearName">
+        <!-- TODO: wargear available from armory goes here -->
     </ion-select>
 </ion-item>
-
-<!-- TODO: from here we want to first loop through equipment (and probably armor first) and then weapons -->
+<ion-item no-lines *ngIf="undefined != fighter">
+    <ion-list>
+        <ion-item *ngFor="let wargear of fighter.wargear">
+            {{wargear.wargear.name}}
+        </ion-item>
+    </ion-list>
+</ion-item>

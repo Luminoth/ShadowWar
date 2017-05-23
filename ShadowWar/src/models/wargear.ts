@@ -1,16 +1,17 @@
 ﻿import { WarGearCharacteristics } from "./characteristics/wargear";
 
+// NOTE: these are in sort order
 export enum WarGearType {
+    Armour,
+    SpecialisedEquipment,
+    Ammo,
+    Gunsight,
+    Grenade,
     HandToHandCombatWeapon,
     Pistol,
     BasicWeapon,
     SpecialWeapon,
-    HeavyWeapon,
-    Grenade,
-    Armour,
-    Ammo,
-    Gunsight,
-    Equipment
+    HeavyWeapon
 }
 
 export class WarGear {
@@ -50,6 +51,25 @@ export class WarGear {
         return this._type;
     }
 
+    public get isWeapon(): boolean {
+        return WarGearType.HandToHandCombatWeapon === this.type
+            || WarGearType.Pistol === this.type
+            || WarGearType.BasicWeapon === this.type
+            || WarGearType.SpecialWeapon === this.type
+            || WarGearType.HeavyWeapon === this.type
+            || WarGearType.Grenade === this.type;
+    }
+
+    public get isArmour(): boolean {
+        return WarGearType.Armour === this.type;
+    }
+
+    public get isEquipment(): boolean {
+        return WarGearType.Ammo === this.type
+            || WarGearType.Gunsight === this.type
+            || WarGearType.SpecialisedEquipment === this.type;
+    }
+
     private _characteristics: WarGearCharacteristics;
 
     public get characteristics(): WarGearCharacteristics {
@@ -68,5 +88,9 @@ export class WarGear {
         this._type = baseWarGear._type;
         this._characteristics = baseWarGear._characteristics;
         this._specialRules = baseWarGear._specialRules;
+    }
+
+    public compareTo(wargear: WarGear): number {
+        return this.type - wargear.type;
     }
 }
