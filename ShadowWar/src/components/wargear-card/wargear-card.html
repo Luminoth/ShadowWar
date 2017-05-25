@@ -1,7 +1,7 @@
-<ion-item no-lines>
+<ion-item no-lines *ngIf="undefined != armory">
     <ion-label>Add Wargear</ion-label>
     <ion-select (ionChange)="onWargearSelected()" class="wargearName">
-        <!-- TODO: wargear available from armory goes here -->
+        <!--<ion-option *ngFor="let entry of armory.entries()"> {{entry[0]}}</ion-option>-->
     </ion-select>
 </ion-item>
 <ion-item no-lines *ngIf="undefined != fighter">

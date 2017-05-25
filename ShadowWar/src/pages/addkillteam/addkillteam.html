@@ -22,12 +22,12 @@
     </ion-item>
     <ion-list>
         <ion-item #leaderItem>
-            <leader-card [leaderNames]="leaderNames" [selectedLeaderName]="selectedLeaderName" [killTeam]="killTeam"></leader-card>
+            <leader-card [leaderNames]="leaderNames" [selectedLeaderName]="selectedLeaderName" [killTeam]="killTeam" [armory]="armory"></leader-card>
         </ion-item>
         <ion-item-group reorder="true" (ionItemReorder)="onReorderFighters($event)">
             <ion-item-sliding *ngFor="let fighter of killTeam.fighters">
                 <ion-item #fighterItem>
-                    <fighter-card [fighter]="fighter"></fighter-card>
+                    <fighter-card [fighter]="fighter" [armory]="armory"></fighter-card>
                 </ion-item>
                 <ion-item-options side="right">
                     <button ion-button icon-only clear color="secondary" (click)="onDuplicateFighter(fighter)">

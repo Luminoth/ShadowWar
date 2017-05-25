@@ -25,11 +25,14 @@ export class Wargear {
 
         const wargear: Wargear = new Wargear();
         wargear._name = object.name;
-        wargear._baseWargear = object.baseWargear;
-        wargear._type = WargearType[object.type as string];
-        wargear._characteristics = WargearCharacteristics.fromJsonObject(object.characteristics);
-        wargear._maxAvailable = object.maxAvailable || -1;
-        wargear._specialRules = object.specialRules || [];
+        if(object.baseWargear) {
+            wargear._baseWargear = object.baseWargear;
+        } else {
+            wargear._type = WargearType[object.type as string];
+            wargear._characteristics = WargearCharacteristics.fromJsonObject(object.characteristics);
+            wargear._maxAvailable = object.maxAvailable || -1;
+            wargear._specialRules = object.specialRules || [];
+        }
         return wargear;
     }
 

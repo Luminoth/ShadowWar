@@ -13,7 +13,7 @@ const FilePath: string = "json/armory/";
 export class ArmoryProvider {
 
     // { faction name => { equipment list name => equipment list } }
-    private armory: Map<string, Map<string, EquipmentList>>;
+    private armory: Map<string, Map<string, EquipmentList>> = new Map<string, Map<string, EquipmentList>>();
 
     constructor(
         private http: Http,

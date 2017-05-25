@@ -1,5 +1,6 @@
 import { Component, Input } from "@angular/core";
 
+import { EquipmentList } from "../../models/armory";
 import { KillTeamFighter } from "../../models/killteamfighter";
 
 @Component({
@@ -10,5 +11,9 @@ import { KillTeamFighter } from "../../models/killteamfighter";
 export class WargearCardComponent {
 
     @Input() private fighter: KillTeamFighter;
+    @Input() private armory: Map<string, EquipmentList>;
+
+    private onWargearSelected(): void {
+    }
 
 }
