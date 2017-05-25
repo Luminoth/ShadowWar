@@ -15,11 +15,11 @@
                 "a": 2,
                 "ld": 9
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Power Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Basic Weapons",
@@ -46,11 +46,11 @@
                 "a": 1,
                 "ld": 8
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Power Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Basic Weapons",
@@ -74,11 +74,11 @@
                 "a": 1,
                 "ld": 7
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Improvised Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Basic Weapons",
@@ -100,11 +100,11 @@
                 "a": 1,
                 "ld": 8
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Power Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Heavy Weapons",

@@ -15,13 +15,13 @@
                 "a": 3,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Concealed Blade",
                 "Harlequin Mask",
                 "Flip Belt",
                 "Holo-suit"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Grenades",
@@ -43,13 +43,13 @@
                 "a": 2,
                 "ld": 9
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Concealed Blade",
                 "Harlequin Mask",
                 "Flip Belt",
                 "Holo-suit"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Grenades",
@@ -71,13 +71,13 @@
                 "a": 2,
                 "ld": 9
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Concealed Blade",
                 "Harlequin Mask",
                 "Flip Belt",
                 "Holo-suit"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Grenades",
@@ -99,13 +99,13 @@
                 "a": 2,
                 "ld": 9
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Concealed Blade",
                 "Harlequin Mask",
                 "Flip Belt",
                 "Holo-suit"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Hand-to-Hand Weapons",
                 "Pistols",
                 "Grenades",

@@ -2,7 +2,7 @@
     "wargear":  [
         {
             "name": "Combat Blade",
-            "baseWarGear": "Knife"
+            "baseWargear": "Knife"
         },
         {
             "name": "Knife",

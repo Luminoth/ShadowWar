@@ -15,11 +15,11 @@
                 "a": 1,
                 "ld": 8
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Recon Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Pistols",
                 "Basic Weapons",
                 "Grenades",
@@ -44,11 +44,11 @@
                 "a": 1,
                 "ld": 7
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Recon Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Pistols",
                 "Basic Weapons",
                 "Grenades",
@@ -70,11 +70,11 @@
                 "a": 1,
                 "ld": 7
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Recon Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Basic Weapons",
                 "Grenades",
                 "Miscellaneous"
@@ -95,11 +95,11 @@
                 "a": 1,
                 "ld": 7
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Recon Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Pistols",
                 "Special Weapons",
                 "Grenades",

@@ -14,7 +14,7 @@ import { RestrictionValidator, Util } from "./util";
 import { DatabaseProvider } from "../providers/database/database";
 import { FactionProvider } from "../providers/factions/faction";
 import { FighterProvider } from "../providers/fighters/fighter";
-import { WarGearProvider } from "../providers/wargear/wargear";
+import { WargearProvider } from "../providers/wargear/wargear";
 import { ArmoryProvider } from "../providers/armory/armory";
 
 import { FighterCardComponent } from "../components/fighter-card/fighter-card";
@@ -57,7 +57,7 @@ import { AddKillTeamPage } from "../pages/addkillteam/addkillteam";
         DatabaseProvider,
         FactionProvider,
         FighterProvider,
-        WarGearProvider,
+        WargearProvider,
         ArmoryProvider,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]

@@ -15,14 +15,14 @@
                 "a": 2,
                 "ld": 9
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Storm Bolter",
                 "Power Armour"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Weapons", 1 ]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Ammunition",
                 "Grenades",
                 "Miscellaneous"
@@ -47,14 +47,14 @@
                 "a": 1,
                 "ld": 8
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Storm Bolter",
                 "Power Armour"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Weapons", 1 ]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Ammunition",
                 "Grenades",
                 "Miscellaneous"
@@ -78,14 +78,14 @@
                 "a": 1,
                 "ld": 8
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Storm Bolter",
                 "Power Armour"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Weapons", 1 ]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Ammunition",
                 "Grenades",
                 "Miscellaneous"

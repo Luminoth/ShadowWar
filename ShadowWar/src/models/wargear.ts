@@ -1,7 +1,7 @@
-﻿import { WarGearCharacteristics } from "./characteristics/wargear";
+﻿import { WargearCharacteristics } from "./characteristics/wargear";
 
 // NOTE: these are in sort order
-export enum WarGearType {
+export enum WargearType {
     Armour,
     SpecialisedEquipment,
     Ammo,
@@ -14,20 +14,20 @@ export enum WarGearType {
     HeavyWeapon
 }
 
-export class WarGear {
+export class Wargear {
 
-    public static fromJsonObjects(objects: any[]): WarGear[] {
+    public static fromJsonObjects(objects: any[]): Wargear[] {
 
         return objects.map(object => this.fromJsonObject(object));
     }
 
-    public static fromJsonObject(object: any): WarGear {
+    public static fromJsonObject(object: any): Wargear {
 
-        const wargear: WarGear = new WarGear();
+        const wargear: Wargear = new Wargear();
         wargear._name = object.name;
-        wargear._baseWarGear = object.baseWarGear;
-        wargear._type = WarGearType[object.type as string];
-        wargear._characteristics = WarGearCharacteristics.fromJsonObject(object.characteristics);
+        wargear._baseWargear = object.baseWargear;
+        wargear._type = WargearType[object.type as string];
+        wargear._characteristics = WargearCharacteristics.fromJsonObject(object.characteristics);
         wargear._maxAvailable = object.maxAvailable || -1;
         wargear._specialRules = object.specialRules || [];
         return wargear;
@@ -39,40 +39,40 @@ export class WarGear {
         return this._name;
     }
 
-    private _baseWarGear: string;
+    private _baseWargear: string;
 
-    public get baseWarGear(): string {
-        return this._baseWarGear;
+    public get baseWargear(): string {
+        return this._baseWargear;
     }
 
-    private _type: WarGearType;
+    private _type: WargearType;
 
-    public get type(): WarGearType {
+    public get type(): WargearType {
         return this._type;
     }
 
     public get isWeapon(): boolean {
-        return WarGearType.HandToHandCombatWeapon === this.type
-            || WarGearType.Pistol === this.type
-            || WarGearType.BasicWeapon === this.type
-            || WarGearType.SpecialWeapon === this.type
-            || WarGearType.HeavyWeapon === this.type
-            || WarGearType.Grenade === this.type;
+        return WargearType.HandToHandCombatWeapon === this.type
+            || WargearType.Pistol === this.type
+            || WargearType.BasicWeapon === this.type
+            || WargearType.SpecialWeapon === this.type
+            || WargearType.HeavyWeapon === this.type
+            || WargearType.Grenade === this.type;
     }
 
     public get isArmour(): boolean {
-        return WarGearType.Armour === this.type;
+        return WargearType.Armour === this.type;
     }
 
     public get isEquipment(): boolean {
-        return WarGearType.Ammo === this.type
-            || WarGearType.Gunsight === this.type
-            || WarGearType.SpecialisedEquipment === this.type;
+        return WargearType.Ammo === this.type
+            || WargearType.Gunsight === this.type
+            || WargearType.SpecialisedEquipment === this.type;
     }
 
-    private _characteristics: WarGearCharacteristics;
+    private _characteristics: WargearCharacteristics;
 
-    public get characteristics(): WarGearCharacteristics {
+    public get characteristics(): WargearCharacteristics {
         return this._characteristics;
     }
 
@@ -84,13 +84,13 @@ export class WarGear {
 
     private _specialRules: string[];
 
-    public updateFromBaseWarGear(baseWarGear: WarGear): void {
-        this._type = baseWarGear._type;
-        this._characteristics = baseWarGear._characteristics;
-        this._specialRules = baseWarGear._specialRules;
+    public updateFromBaseWargear(baseWargear: Wargear): void {
+        this._type = baseWargear._type;
+        this._characteristics = baseWargear._characteristics;
+        this._specialRules = baseWargear._specialRules;
     }
 
-    public compareTo(wargear: WarGear): number {
+    public compareTo(wargear: Wargear): number {
         return this.type - wargear.type;
     }
 }

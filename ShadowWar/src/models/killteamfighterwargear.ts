@@ -1,12 +1,12 @@
-﻿import { WarGear } from "./wargear";
+﻿import { Wargear } from "./wargear";
 
 export const MaxHeavyWeapons: number = 1;
 
-export class KillTeamFighterWarGear {
+export class KillTeamFighterWargear {
 
-    private _wargear: WarGear;
+    private _wargear: Wargear;
 
-    public get wargear(): WarGear {
+    public get wargear(): Wargear {
         return this._wargear;
     }
 }

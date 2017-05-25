@@ -1,8 +1,8 @@
-﻿export class WarGearCharacteristics {
+﻿export class WargearCharacteristics {
 
-    public static fromJsonObject(object: any): WarGearCharacteristics {
+    public static fromJsonObject(object: any): WargearCharacteristics {
 
-        const characteristics: WarGearCharacteristics = new WarGearCharacteristics();
+        const characteristics: WargearCharacteristics = new WargearCharacteristics();
 
         characteristics._shortRangeMin = object.shortRangeMin;
         characteristics._shortRangeMax = object.shortRangeMax;

@@ -15,11 +15,11 @@
                 "a": 1,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Immortal Exoskeleton"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Basic Weapons",
                 "Miscellaneous"
             ]
@@ -39,11 +39,11 @@
                 "a": 1,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Immortal Exoskeleton"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Basic Weapons",
                 "Miscellaneous"
             ]
@@ -63,11 +63,11 @@
                 "a": 1,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Warrior Exoskeleton"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Basic Weapons",
                 "Miscellaneous"
             ]
@@ -87,11 +87,11 @@
                 "a": 1,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Immortal Exoskeleton"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Special Weapons",
                 "Miscellaneous"
             ],

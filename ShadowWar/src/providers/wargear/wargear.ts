@@ -5,19 +5,19 @@ import "rxjs/add/operator/map";
 
 import { Util } from "../../app/util";
 import { Faction } from "../../models/faction";
-import { WarGear } from "../../models/wargear";
+import { Wargear } from "../../models/wargear";
 
 const FilePath: string = "json/wargear/";
 const BaseFileName: string = "base.json";
 
 @Injectable()
-export class WarGearProvider {
+export class WargearProvider {
 
-    private baseWarGear: Map<string, WarGear> = new Map<string, WarGear>();
-    private baseWarGearLoaded: boolean;
+    private baseWargear: Map<string, Wargear> = new Map<string, Wargear>();
+    private baseWargearLoaded: boolean;
 
     // { faction name => { wargear name => wargear } }
-    private wargear: Map<string, Map<string, WarGear>> = new Map<string, Map<string, WarGear>>();
+    private wargear: Map<string, Map<string, Wargear>> = new Map<string, Map<string, Wargear>>();
 
     constructor(
         private http: Http,
@@ -25,17 +25,17 @@ export class WarGearProvider {
         private util: Util) {
     }
 
-    public getWarGear(faction: Faction): Promise<Map<string, WarGear>> {
-        return this.getBaseWarGear()
+    public getWargear(faction: Faction): Promise<Map<string, Wargear>> {
+        return this.getBaseWargear()
             .then(() => {
-                return this.getFactionWarGear(faction);
+                return this.getFactionWargear(faction);
             });
     }
 
-    private getBaseWarGear(): Promise<Map<string, WarGear>> {
-        return new Promise<Map<string, WarGear>>((resolve, reject) => {
-            if(this.baseWarGearLoaded) {
-                return resolve(this.baseWarGear);
+    private getBaseWargear(): Promise<Map<string, Wargear>> {
+        return new Promise<Map<string, Wargear>>((resolve, reject) => {
+            if(this.baseWargearLoaded) {
+                return resolve(this.baseWargear);
             }
 
             const url: string = this.util.getAssetFileUrl(FilePath, BaseFileName);
@@ -43,8 +43,8 @@ export class WarGearProvider {
 
             this.http.get(url).map((res) => res.json())
                 .subscribe(data => {
-                        this.setBaseWarGear(WarGear.fromJsonObjects(data.wargear));
-                        return resolve(this.baseWarGear);
+                        this.setBaseWargear(Wargear.fromJsonObjects(data.wargear));
+                        return resolve(this.baseWargear);
                     },
                     err => {
                         console.log(err);
@@ -61,8 +61,8 @@ export class WarGearProvider {
         });
     }
 
-    private getFactionWarGear(faction: Faction): Promise<Map<string, WarGear>> {
-        return new Promise<Map<string, WarGear>>((resolve, reject) => {
+    private getFactionWargear(faction: Faction): Promise<Map<string, Wargear>> {
+        return new Promise<Map<string, Wargear>>((resolve, reject) => {
             if(this.wargear.has(faction.name)) {
                 return resolve(this.wargear.get(faction.name));
             }
@@ -72,7 +72,7 @@ export class WarGearProvider {
 
             this.http.get(url).map((res) => res.json())
                 .subscribe(data => {
-                    this.setWarGear(faction, WarGear.fromJsonObjects(data.wargear));
+                    this.setWargear(faction, Wargear.fromJsonObjects(data.wargear));
 
                     if(faction.superFaction) {
                         this.resolveSuperFaction(faction)
@@ -97,37 +97,37 @@ export class WarGearProvider {
         });
     }
 
-    private setBaseWarGear(wargear: WarGear[]): void {
-        wargear.forEach(gear => this.baseWarGear.set(gear.name, gear));
-        this.resolveBaseWarGear(this.baseWarGear);
+    private setBaseWargear(wargear: Wargear[]): void {
+        wargear.forEach(gear => this.baseWargear.set(gear.name, gear));
+        this.resolveBaseWargear(this.baseWargear);
     }
 
-    private setWarGear(faction: Faction, wargear: WarGear[]): void {
-        const warGearMap: Map<string, WarGear> = new Map<string, WarGear>();
-        this.baseWarGear.forEach(gear => warGearMap.set(gear[0], gear[1]));
+    private setWargear(faction: Faction, wargear: Wargear[]): void {
+        const warGearMap: Map<string, Wargear> = new Map<string, Wargear>();
+        this.baseWargear.forEach(gear => warGearMap.set(gear[0], gear[1]));
         wargear.forEach(gear => warGearMap.set(gear.name, gear));
 
-        this.resolveBaseWarGear(warGearMap);
+        this.resolveBaseWargear(warGearMap);
         this.wargear.set(faction.name, warGearMap);
     }
 
-    private resolveBaseWarGear(wargears: Map<string, WarGear>): void {
+    private resolveBaseWargear(wargears: Map<string, Wargear>): void {
         wargears.forEach(wargear => {
-            if(wargear.baseWarGear) {
-                const baseWarGear: WarGear = this.baseWarGear.get(wargear.baseWarGear);
-                wargear.updateFromBaseWarGear(baseWarGear);
+            if(wargear.baseWargear) {
+                const baseWargear: Wargear = this.baseWargear.get(wargear.baseWargear);
+                wargear.updateFromBaseWargear(baseWargear);
             }
         });
     }
 
     private resolveSuperFaction(faction: Faction): Promise<void> {
-        const wargear: Map<string, WarGear> = this.wargear.get(faction.name);
+        const wargear: Map<string, Wargear> = this.wargear.get(faction.name);
 
-        return this.getWarGear(faction.superFaction)
-            .then((superFactionWarGears) => {
-                [...superFactionWarGears]
-                    .filter(superFactionWarGear => !wargear.has(superFactionWarGear[0]))
-                    .forEach(superFactionWarGear => wargear.set(superFactionWarGear[0], superFactionWarGear[1]));
+        return this.getWargear(faction.superFaction)
+            .then((superFactionWargears) => {
+                [...superFactionWargears]
+                    .filter(superFactionWargear => !wargear.has(superFactionWargear[0]))
+                    .forEach(superFactionWargear => wargear.set(superFactionWargear[0], superFactionWargear[1]));
             });
     }
 }

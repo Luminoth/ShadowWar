@@ -15,11 +15,11 @@
                 "a": 1,
                 "ld": 8
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Combat Blade",
                 "Scout Armour"
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Pistols",
                 "Heavy Weapons",
                 "Ammunition",

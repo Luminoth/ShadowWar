@@ -15,15 +15,15 @@
                 "a": 3,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Scything Talons",
                 "Chitin Carapace"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Bio-weapons", 1 ],
                 [ "Basic Bio-weapons", 1 ]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Biomorphs"
             ]
         },
@@ -42,15 +42,15 @@
                 "a": 3,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Scything Talons",
                 "Chitin Carapace"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Bio-weapons", 1 ],
                 [ "Basic Bio-weapons", 1 ]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Biomorphs"
             ]
         },
@@ -69,15 +69,15 @@
                 "a": 3,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Scything Talons",
                 "Chitin Carapace"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Bio-weapons", 1 ],
                 [ "Basic Bio-weapons", 1 ]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Biomorphs"
             ]
         },
@@ -96,16 +96,16 @@
                 "a": 3,
                 "ld": 10
             },
-            "standardWarGear": [
+            "standardWargear": [
                 "Scything Talons",
                 "Chitin Carapace"
             ],
-            "requiredWarGear": [
+            "requiredWargear": [
                 [ "Hand-to-Hand Bio-weapons", 1 ],
                 [ "Basic Bio-weapons", 1 ],
                 [ "Bio-cannons", 1]
             ],
-            "availableWarGearLists": [
+            "availableWargearLists": [
                 "Biomorphs"
             ]
         }

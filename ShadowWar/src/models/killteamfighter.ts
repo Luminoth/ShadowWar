@@ -1,5 +1,5 @@
 ﻿import { Fighter } from "./fighter";
-import { KillTeamFighterWarGear } from "./killteamfighterwargear";
+import { KillTeamFighterWargear } from "./killteamfighterwargear";
 
 export class KillTeamFighter {
 
@@ -17,9 +17,9 @@ export class KillTeamFighter {
         this._name = value;
     }
 
-    private _wargear: KillTeamFighterWarGear[] = [];
+    private _wargear: KillTeamFighterWargear[] = [];
 
-    public get wargear(): KillTeamFighterWarGear[] {
+    public get wargear(): KillTeamFighterWargear[] {
         return this._wargear;
     }
 
@@ -29,7 +29,7 @@ export class KillTeamFighter {
     private onWargearSelected(): void {
     }
 
-    private addWarGear(): void {
+    private addWargear(): void {
 // TODO: add the wargear
         this._wargear.sort((x, y) => x.wargear.compareTo(y.wargear));
     }
