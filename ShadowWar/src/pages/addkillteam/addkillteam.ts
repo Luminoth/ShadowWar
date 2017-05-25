@@ -4,9 +4,13 @@ import { NavController, Platform, AlertController, Alert, Content } from "ionic-
 import { DatabaseProvider } from "../../providers/database/database";
 import { FactionProvider } from "../../providers/factions/faction";
 import { FighterProvider } from "../../providers/fighters/fighter";
+import { ArmoryProvider } from "../../providers/armory/armory";
+import { WargearProvider } from "../../providers/wargear/wargear";
 
 import { Faction } from "../../models/faction";
 import { Fighter, FighterType } from "../../models/fighter";
+import { EquipmentList } from "../../models/armory";
+import { Wargear } from "../../models/wargear";
 import { KillTeam } from "../../models/killteam";
 import { KillTeamFighter } from "../../models/killteamfighter";
 
@@ -30,6 +34,10 @@ export class AddKillTeamPage {
     private fighters: Map<string, Fighter>;
     private fighterList: Fighter[];
 
+    private armory: Map<string, EquipmentList>;
+
+    private wargear: Map<string, Wargear>;
+
     private killTeam: KillTeam;
 
     constructor(
@@ -38,6 +46,8 @@ export class AddKillTeamPage {
         private alertCtrl: AlertController,
         private factionProvider: FactionProvider,
         private fighterProvider: FighterProvider,
+        private armoryProvider: ArmoryProvider,
+        private WargearProvider: WargearProvider,
         private databaseProvider: DatabaseProvider) {
 
         this.killTeam = new KillTeam();
@@ -63,7 +73,7 @@ export class AddKillTeamPage {
     private onFactionSelected(): Promise<any> {
         return this.factionProvider.getFaction(this.selectedFactionName)
             .then((faction) => {
-                this.loadFighters(faction)
+                this.loadData(faction)
                     .then(() => {
                         if(!this.setFaction(faction)) {
                             this.selectLastFaction();
@@ -91,6 +101,17 @@ export class AddKillTeamPage {
         return this.onFactionSelected();
     }
 
+    private loadData(faction: Faction): Promise<any> {
+// TODO: catch and reject errors
+        return this.loadFighters(faction)
+            .then(() => {
+                this.loadArmory(faction)
+                    .then(() => {
+                        this.loadWargear(faction);
+                    });
+            });
+    }
+
     private loadFighters(faction: Faction): Promise<any> {
         return this.fighterProvider.getFighters(faction)
             .then((fighters) => {
@@ -108,11 +129,26 @@ export class AddKillTeamPage {
                 }
 
                 if(0 === this.leaderNames.length) {
-                    return Promise.reject("No leaders found!");
+                    Promise.reject("No leaders found!");
+                    return;
                 }
 
                 this.selectedLeaderName = this.leaderNames[0];
                 this.fighterList.sort((x, y) => x.type - y.type);
+            });
+    }
+
+    private loadArmory(faction: Faction): Promise<any> {
+        return this.armoryProvider.getArmory(faction)
+            .then((armory) => {
+                this.armory = armory;
+            });
+    }
+
+    private loadWargear(faction: Faction): Promise<any> {
+        return this.WargearProvider.getWargear(faction)
+            .then((wargear) => {
+                this.wargear = wargear;
             });
     }
 
